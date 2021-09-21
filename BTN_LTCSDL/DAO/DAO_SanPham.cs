@@ -6,26 +6,87 @@ using System.Threading.Tasks;
 
 namespace BTN_LTCSDL.DAO
 {
-    
     class DAO_SanPham
     {
-        LaptopPCSaleEntities db;
-        public DAO_SanPham() 
+        private LaptopPCSaleDBEntities db;
+
+        public DAO_SanPham()
         {
             db = new LaptopPCSaleDBEntities();
         }
+
         public dynamic LayDSSanPham()
         {
-            var ds = db.Products.Select(s => new
+            var query = db.Products.Select(p => new
             {
-                s.ProductID,
-                s.ProductName,
-                s.UnitPrice,
-                s.QuantityPerUnit,
-                s.Supplier.CompanyName,
-                s.Category.CategoryName
+                p.ProductID,
+                p.ProductName,
+                p.UnitPrice,
+                p.UnitsInStock,
+                p.Category.CategoryName,
+                p.Supplier.CompanyName
             }).ToList();
-            return ds;
+            return query;
+        }
+
+        public dynamic LayDSLoaiSanPham()
+        {
+            var query = db.Categories.Select(p => new
+            {
+                p.CategoryID,
+                p.CategoryName
+            }).ToList();
+            return query;
+        }
+
+        public dynamic LayDSNhaCungCap()
+        {
+            var query = db.Suppliers.Select(p => new
+            {
+                p.SupplierID,
+                p.CompanyName
+            }).ToList();
+            return query;
+        }
+
+        public void ThemSanPham(Product sanPham)
+        {
+            db.Products.Add(sanPham);
+            db.SaveChanges();
+        }
+
+        public bool XoaSanPham(Product sanPham)
+        {
+            try
+            {
+                Product product = db.Products.Where(p => p.ProductID == sanPham.ProductID).First();
+                db.Products.Remove(product);
+                db.SaveChanges();
+                return true;
+            }
+            catch(Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool SuaSanPham(Product sanPham)
+        {
+            try
+            {
+                Product product = db.Products.Where(p => p.ProductID == sanPham.ProductID).First();
+                product.ProductName = sanPham.ProductName;
+                product.UnitPrice = sanPham.UnitPrice;
+                product.UnitsInStock = sanPham.UnitsInStock;
+                product.CategoryID = sanPham.CategoryID;
+                product.SupplierID = sanPham.SupplierID;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }
