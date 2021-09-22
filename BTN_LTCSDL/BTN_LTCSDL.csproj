@@ -104,6 +104,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SaleLapDBModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>SaleLapDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>SaleLapDBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Supplier.cs">
       <DependentUpon>SaleLapDBModel.tt</DependentUpon>
     </Compile>
