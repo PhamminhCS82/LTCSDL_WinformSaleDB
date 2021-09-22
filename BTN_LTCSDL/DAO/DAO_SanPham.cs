@@ -55,24 +55,31 @@ namespace BTN_LTCSDL.DAO
             db.SaveChanges();
         }
 
+        public bool CoTonTaiSanPham(Product sanPham)
+        {
+            Product product = db.Products.Find(sanPham.ProductID);
+            if (product != null)
+                return true;
+            else
+                return false;
+        }
+
         public bool XoaSanPham(Product sanPham)
         {
-            try
+            if (CoTonTaiSanPham(sanPham))
             {
-                Product product = db.Products.Where(p => p.ProductID == sanPham.ProductID).First();
+                Product product = db.Products.Find(sanPham.ProductID);
                 db.Products.Remove(product);
                 db.SaveChanges();
                 return true;
             }
-            catch(Exception)
-            {
+            else
                 return false;
-            }
         }
 
         public bool SuaSanPham(Product sanPham)
         {
-            try
+            if (CoTonTaiSanPham(sanPham))
             {
                 Product product = db.Products.Where(p => p.ProductID == sanPham.ProductID).First();
                 product.ProductName = sanPham.ProductName;
@@ -83,10 +90,8 @@ namespace BTN_LTCSDL.DAO
                 db.SaveChanges();
                 return true;
             }
-            catch (Exception)
-            {
+            else
                 return false;
-            }
         }
     }
 }

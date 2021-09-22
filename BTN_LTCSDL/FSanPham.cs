@@ -132,5 +132,13 @@ namespace BTN_LTCSDL
         {
             this.Close();
         }
+
+
+        //Sự kiện kiểm tra và chỉ cho nhập số
+        private void txtDonGia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
     }
 }
