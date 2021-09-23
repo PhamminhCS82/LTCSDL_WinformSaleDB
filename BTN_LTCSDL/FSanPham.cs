@@ -120,6 +120,14 @@ namespace BTN_LTCSDL
                     if (busSanPham.XoaSanPham(sanPham))
                     {
                         CapNhat();
+
+                        //Clear các giá trị trên Textbox
+                        txtDonGia.Text = "";
+                        txtMaSanPham.Text = "";
+                        txtTenSanPham.Text = "";
+                        numSoLuong.Value = 0;
+                        cbLoaiSanPham.Text = "";
+                        cbNhaCungCap.Text = "";
                         MessageBox.Show("Xóa sản phẩm thành công", "Thông báo");
                     }
                     else

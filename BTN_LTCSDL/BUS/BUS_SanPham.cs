@@ -43,8 +43,9 @@ namespace BTN_LTCSDL.BUS
                 daoSanPham.ThemSanPham(sanPham);
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 return false;
             }
         }
@@ -56,8 +57,9 @@ namespace BTN_LTCSDL.BUS
                 daoSanPham.XoaSanPham(sanPham);
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 return false;
             }
         }
@@ -69,8 +71,9 @@ namespace BTN_LTCSDL.BUS
                 daoSanPham.SuaSanPham(sanPham);
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 return false;
             }
         }

@@ -61,6 +61,7 @@ namespace BTN_LTCSDL
             this.dtgvKhachHang.RowTemplate.Height = 24;
             this.dtgvKhachHang.Size = new System.Drawing.Size(864, 275);
             this.dtgvKhachHang.TabIndex = 0;
+            this.dtgvKhachHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvKhachHang_CellClick);
             // 
             // groupBox1
             // 
@@ -83,38 +84,39 @@ namespace BTN_LTCSDL
             // 
             // txtDiaChi
             // 
-            this.txtDiaChi.Location = new System.Drawing.Point(416, 106);
+            this.txtDiaChi.Location = new System.Drawing.Point(367, 106);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(381, 22);
+            this.txtDiaChi.Size = new System.Drawing.Size(241, 22);
             this.txtDiaChi.TabIndex = 14;
             // 
             // txtTenCongTy
             // 
-            this.txtTenCongTy.Location = new System.Drawing.Point(392, 55);
+            this.txtTenCongTy.Location = new System.Drawing.Point(367, 55);
             this.txtTenCongTy.Name = "txtTenCongTy";
-            this.txtTenCongTy.Size = new System.Drawing.Size(203, 22);
+            this.txtTenCongTy.Size = new System.Drawing.Size(241, 22);
             this.txtTenCongTy.TabIndex = 13;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(359, 109);
+            this.label6.Location = new System.Drawing.Point(310, 109);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(51, 17);
             this.label6.TabIndex = 8;
-            this.label6.Text = "Dịa chỉ";
+            this.label6.Text = "Địa chỉ";
             // 
             // txtSoDienThoai
             // 
-            this.txtSoDienThoai.Location = new System.Drawing.Point(717, 55);
+            this.txtSoDienThoai.Location = new System.Drawing.Point(717, 79);
             this.txtSoDienThoai.Name = "txtSoDienThoai";
             this.txtSoDienThoai.Size = new System.Drawing.Size(124, 22);
             this.txtSoDienThoai.TabIndex = 7;
+            this.txtSoDienThoai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoDienThoai_KeyPress);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(635, 58);
+            this.label3.Location = new System.Drawing.Point(635, 82);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 17);
             this.label3.TabIndex = 6;
@@ -123,7 +125,7 @@ namespace BTN_LTCSDL
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(299, 58);
+            this.label4.Location = new System.Drawing.Point(274, 58);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 17);
             this.label4.TabIndex = 4;
@@ -133,7 +135,7 @@ namespace BTN_LTCSDL
             // 
             this.txtTenKhachHang.Location = new System.Drawing.Point(135, 106);
             this.txtTenKhachHang.Name = "txtTenKhachHang";
-            this.txtTenKhachHang.Size = new System.Drawing.Size(177, 22);
+            this.txtTenKhachHang.Size = new System.Drawing.Size(160, 22);
             this.txtTenKhachHang.TabIndex = 3;
             // 
             // label2
@@ -183,6 +185,7 @@ namespace BTN_LTCSDL
             this.btDong.TabIndex = 3;
             this.btDong.Text = "Đóng";
             this.btDong.UseVisualStyleBackColor = true;
+            this.btDong.Click += new System.EventHandler(this.btDong_Click);
             // 
             // btXoa
             // 
@@ -193,6 +196,7 @@ namespace BTN_LTCSDL
             this.btXoa.TabIndex = 2;
             this.btXoa.Text = "Xóa";
             this.btXoa.UseVisualStyleBackColor = true;
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
             // 
             // btSua
             // 
@@ -203,6 +207,7 @@ namespace BTN_LTCSDL
             this.btSua.TabIndex = 1;
             this.btSua.Text = "Sửa";
             this.btSua.UseVisualStyleBackColor = true;
+            this.btSua.Click += new System.EventHandler(this.btSua_Click);
             // 
             // btThem
             // 

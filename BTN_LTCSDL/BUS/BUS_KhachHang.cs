@@ -21,5 +21,47 @@ namespace BTN_LTCSDL.BUS
         {
             dtgv.DataSource = daoKhachHang.LayDSKhachHang();
         }
+
+        public bool ThemKhachHang(Customer khachHang)
+        {
+            try
+            {
+                daoKhachHang.ThemKhachHang(khachHang);
+                return true;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
+        public bool XoaKhachHang(Customer khachHang)
+        {
+            try
+            {
+                daoKhachHang.XoaKhachHang(khachHang);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
+        public bool SuaKhachHang(Customer khachHang)
+        {
+            try
+            {
+                daoKhachHang.SuaKhachHang(khachHang);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
     }
 }
