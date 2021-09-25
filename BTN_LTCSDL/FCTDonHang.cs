@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace BTN_LTCSDL
 {
-    public partial class Form1 : Form
+    public partial class FCTDonHang : Form
     {
-        public Form1()
+        public FCTDonHang()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void btThem_Click(object sender, EventArgs e)
         {
 
         }
