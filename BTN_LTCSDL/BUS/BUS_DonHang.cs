@@ -20,7 +20,7 @@ namespace BTN_LTCSDL.BUS
         }
         public void HienThiDSDonHang(DataGridView dg)
         {
-            dg.DataSource = dDH.layDSDH();
+            dg.DataSource = dDH.LayDSDH();
         }
         public void HienThiDSCTDonHang(DataGridView dg, int maDH)
         {
@@ -29,7 +29,7 @@ namespace BTN_LTCSDL.BUS
         public void layDSNhanVien(ComboBox cbx)
         {
             cbx.DataSource = dDH.LayDSNV();
-            cbx.DisplayMember = "LastName";
+            cbx.DisplayMember = "FirstName";
             cbx.ValueMember = "EmployeeID";
         }
         public void layDSKhachHang(ComboBox cbx)
@@ -47,6 +47,18 @@ namespace BTN_LTCSDL.BUS
                 return true;
             }
             catch (Exception)
+            {
+                return false;
+            }
+        }
+        public bool TaoCTDonHang(OrderDetail d)
+        {
+            try
+            {
+                dDH.ThemCTDH(d);
+                return true;
+            }
+            catch
             {
                 return false;
             }
@@ -93,41 +105,17 @@ namespace BTN_LTCSDL.BUS
                 return false;
             }
         }
-        //public bool ThemCTDH(int maDH, DataTable dtDonHang)
-        //{
-        //    bool ketqua = false;
-        //    using (var tran = new TransactionScope())
-        //    {
-        //        try
-        //        {
-        //            foreach (DataRow item in dtDonHang.Rows)
-        //            {
-        //                Order_Detail d = new Order_Detail();
-        //                d.OrderID = maDH;
-        //                d.ProductID = int.Parse(item[0].ToString());
-        //                d.UnitPrice = int.Parse(item[1].ToString());
-        //                d.Quantity = short.Parse(item[2].ToString());
-        //                d.Discount = float.Parse(item[3].ToString());
-        //                if (dDonHang.KiemTraSPDonHang(d))
-        //                {
-        //                    dDonHang.ThemCTDH(d);
-        //                }
-        //                else
-        //                {
-        //                    throw new Exception("Sản phẩm đã tồn tại" + d.ProductID);
-        //                }
-
-        //            }
-        //            tran.Complete();
-        //            ketqua = true;
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            ketqua = false;
-        //            MessageBox.Show(ex.Message);
-        //        }
-        //    }
-        //    return ketqua;
-        //}
+        public bool ThemCTDH(OrderDetail d)
+        {
+            try
+            {
+                dDH.ThemCTDH(d);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

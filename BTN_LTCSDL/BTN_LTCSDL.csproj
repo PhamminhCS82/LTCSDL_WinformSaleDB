@@ -127,9 +127,6 @@
     <Compile Include="Supplier.cs">
       <DependentUpon>SaleLapDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>SaleLapDBModel.tt</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="FCTDonHang.resx">
       <DependentUpon>FCTDonHang.cs</DependentUpon>
     </EmbeddedResource>

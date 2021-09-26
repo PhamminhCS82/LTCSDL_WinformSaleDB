@@ -23,10 +23,11 @@ namespace BTN_LTCSDL
         {
             dtgvDonHang.DataSource = null;
             busDH.HienThiDSDonHang(dtgvDonHang);
-            dtgvDonHang.Columns[0].Width = (int)(dtgvDonHang.Width * 0.2);
-            dtgvDonHang.Columns[1].Width = (int)(dtgvDonHang.Width * 0.25);
-            dtgvDonHang.Columns[2].Width = (int)(dtgvDonHang.Width * 0.25);
-            dtgvDonHang.Columns[3].Width = (int)(dtgvDonHang.Width * 0.25);
+            dtgvDonHang.Columns[0].Width = (int)(dtgvDonHang.Width * 0.1);
+            dtgvDonHang.Columns[1].Width = (int)(dtgvDonHang.Width * 0.2);
+            dtgvDonHang.Columns[2].Width = (int)(dtgvDonHang.Width * 0.2);
+            dtgvDonHang.Columns[3].Width = (int)(dtgvDonHang.Width * 0.2);
+            dtgvDonHang.Columns[4].Width = (int)(dtgvDonHang.Width * 0.25);
         }
         private void FDonHang_Load(object sender, EventArgs e)
         {
@@ -46,6 +47,7 @@ namespace BTN_LTCSDL
         //Tạo đơn hàng mới
         private void btThem_Click(object sender, EventArgs e)
         {
+
             Order donHang = new Order();
             donHang.OrderDate = dtpNgayDatHang.Value;
             donHang.EmployeeID = Int32.Parse(cbNhanVien.SelectedValue.ToString());
@@ -68,6 +70,44 @@ namespace BTN_LTCSDL
                 cbNhanVien.Text = dtgvDonHang.Rows[e.RowIndex].Cells[2].Value.ToString();
                 cbKhachHang.Text = dtgvDonHang.Rows[e.RowIndex].Cells[3].Value.ToString();
             }
+        }
+        private void dtgvDonHang_DoubleClick(object sender, EventArgs e)
+        {
+            int ma;
+            ma = int.Parse(dtgvDonHang.CurrentRow.Cells[0].Value.ToString());
+            FCTDonHang f = new FCTDonHang();
+            f.maDH = ma;
+            f.ShowDialog();
+        }
+
+        private void btSua_Click(object sender, EventArgs e)
+        {
+            Order d = new Order();
+            d.OrderID = int.Parse(txtMaDonHang.Text);
+            d.OrderDate = dtpNgayDatHang.Value;
+            d.EmployeeID = int.Parse(cbNhanVien.SelectedValue.ToString());
+            d.CustomerID = int.Parse(cbKhachHang.SelectedValue.ToString());
+            if (busDH.SuaDonHang(d))
+            {
+                MessageBox.Show("Sửa đơn hàng thành công");
+                busDH.HienThiDSDonHang(dtgvDonHang);
+            }
+            else
+                MessageBox.Show("Sửa đơn hàng thất bại");
+        }
+
+        private void btXoa_Click(object sender, EventArgs e)
+        {
+            Order d = new Order();
+            d.OrderID = int.Parse(txtMaDonHang.Text);
+
+            if (busDH.XoaDonHang(d))
+            {
+                MessageBox.Show("Hủy đơn hàng thành công");
+                busDH.HienThiDSDonHang(dtgvDonHang);
+            }
+            else
+                MessageBox.Show("Hủy đơn hàng thất bại");
         }
     }
 }

@@ -34,6 +34,9 @@ namespace BTN_LTCSDL
             this.diaChiLabel = new System.Windows.Forms.Label();
             this.dienThoaiLabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.numericUpDownSLSP = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbSanPham = new System.Windows.Forms.ComboBox();
             this.txtSoLuongConLai = new System.Windows.Forms.TextBox();
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.txtMaDH = new System.Windows.Forms.TextBox();
@@ -51,20 +54,17 @@ namespace BTN_LTCSDL
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btThoat = new System.Windows.Forms.Button();
-            this.btSua = new System.Windows.Forms.Button();
             this.btXoa = new System.Windows.Forms.Button();
             this.btThem = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.gVCTDH = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
-            this.cbSanPham = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.numericUpDownSLSP = new System.Windows.Forms.NumericUpDown();
+            this.btSua = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSLSP)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gVCTDH)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSLSP)).BeginInit();
             this.SuspendLayout();
             // 
             // hoTenNhanVienLabel
@@ -83,9 +83,9 @@ namespace BTN_LTCSDL
             this.ngaySinhLabel.Location = new System.Drawing.Point(25, 92);
             this.ngaySinhLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ngaySinhLabel.Name = "ngaySinhLabel";
-            this.ngaySinhLabel.Size = new System.Drawing.Size(93, 17);
+            this.ngaySinhLabel.Size = new System.Drawing.Size(99, 17);
             this.ngaySinhLabel.TabIndex = 4;
-            this.ngaySinhLabel.Text = "Mã sản phẩm";
+            this.ngaySinhLabel.Text = "Tên sản phẩm";
             // 
             // diaChiLabel
             // 
@@ -128,14 +128,42 @@ namespace BTN_LTCSDL
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin đơn hàng";
             // 
+            // numericUpDownSLSP
+            // 
+            this.numericUpDownSLSP.Location = new System.Drawing.Point(566, 96);
+            this.numericUpDownSLSP.Name = "numericUpDownSLSP";
+            this.numericUpDownSLSP.Size = new System.Drawing.Size(102, 22);
+            this.numericUpDownSLSP.TabIndex = 17;
+            this.numericUpDownSLSP.ValueChanged += new System.EventHandler(this.numericUpDownSLSP_ValueChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(473, 96);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 17);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Số lượng đặt";
+            // 
+            // cbSanPham
+            // 
+            this.cbSanPham.FormattingEnabled = true;
+            this.cbSanPham.Location = new System.Drawing.Point(143, 89);
+            this.cbSanPham.Name = "cbSanPham";
+            this.cbSanPham.Size = new System.Drawing.Size(305, 24);
+            this.cbSanPham.TabIndex = 15;
+            this.cbSanPham.SelectedIndexChanged += new System.EventHandler(this.cbSanPham_SelectedIndexChanged);
+            // 
             // txtSoLuongConLai
             // 
-            this.txtSoLuongConLai.Enabled = false;
             this.txtSoLuongConLai.Location = new System.Drawing.Point(809, 93);
             this.txtSoLuongConLai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSoLuongConLai.Name = "txtSoLuongConLai";
+            this.txtSoLuongConLai.ReadOnly = true;
             this.txtSoLuongConLai.Size = new System.Drawing.Size(62, 22);
             this.txtSoLuongConLai.TabIndex = 14;
+            this.txtSoLuongConLai.Text = "0";
             // 
             // txtDonGia
             // 
@@ -145,6 +173,7 @@ namespace BTN_LTCSDL
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Size = new System.Drawing.Size(305, 22);
             this.txtDonGia.TabIndex = 13;
+            this.txtDonGia.Text = "0";
             // 
             // txtMaDH
             // 
@@ -266,16 +295,7 @@ namespace BTN_LTCSDL
             this.btThoat.TabIndex = 3;
             this.btThoat.Text = "Thoát";
             this.btThoat.UseVisualStyleBackColor = true;
-            // 
-            // btSua
-            // 
-            this.btSua.Location = new System.Drawing.Point(226, 23);
-            this.btSua.Margin = new System.Windows.Forms.Padding(4);
-            this.btSua.Name = "btSua";
-            this.btSua.Size = new System.Drawing.Size(100, 71);
-            this.btSua.TabIndex = 2;
-            this.btSua.Text = "Sửa";
-            this.btSua.UseVisualStyleBackColor = true;
+            this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
             // 
             // btXoa
             // 
@@ -286,6 +306,7 @@ namespace BTN_LTCSDL
             this.btXoa.TabIndex = 1;
             this.btXoa.Text = "Xóa";
             this.btXoa.UseVisualStyleBackColor = true;
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
             // 
             // btThem
             // 
@@ -320,6 +341,7 @@ namespace BTN_LTCSDL
             this.gVCTDH.RowTemplate.Height = 28;
             this.gVCTDH.Size = new System.Drawing.Size(867, 331);
             this.gVCTDH.TabIndex = 0;
+            this.gVCTDH.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gVCTDH_CellClick);
             // 
             // label7
             // 
@@ -332,30 +354,16 @@ namespace BTN_LTCSDL
             this.label7.TabIndex = 12;
             this.label7.Text = "CHI TIẾT ĐƠN HÀNG";
             // 
-            // cbSanPham
+            // btSua
             // 
-            this.cbSanPham.FormattingEnabled = true;
-            this.cbSanPham.Location = new System.Drawing.Point(143, 89);
-            this.cbSanPham.Name = "cbSanPham";
-            this.cbSanPham.Size = new System.Drawing.Size(305, 24);
-            this.cbSanPham.TabIndex = 15;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(473, 96);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 17);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Số lượng đặt";
-            // 
-            // numericUpDownSLSP
-            // 
-            this.numericUpDownSLSP.Location = new System.Drawing.Point(566, 96);
-            this.numericUpDownSLSP.Name = "numericUpDownSLSP";
-            this.numericUpDownSLSP.Size = new System.Drawing.Size(102, 22);
-            this.numericUpDownSLSP.TabIndex = 17;
+            this.btSua.Location = new System.Drawing.Point(226, 23);
+            this.btSua.Margin = new System.Windows.Forms.Padding(4);
+            this.btSua.Name = "btSua";
+            this.btSua.Size = new System.Drawing.Size(100, 71);
+            this.btSua.TabIndex = 2;
+            this.btSua.Text = "Sửa";
+            this.btSua.UseVisualStyleBackColor = true;
+            this.btSua.Click += new System.EventHandler(this.btSua_Click);
             // 
             // FCTDonHang
             // 
@@ -369,12 +377,13 @@ namespace BTN_LTCSDL
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FCTDonHang";
             this.Text = "FOrderDetails";
+            this.Load += new System.EventHandler(this.FCTDonHang_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSLSP)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gVCTDH)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSLSP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -397,7 +406,6 @@ namespace BTN_LTCSDL
         private System.Windows.Forms.DateTimePicker dtpNgayDonHang;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btThoat;
-        private System.Windows.Forms.Button btSua;
         private System.Windows.Forms.Button btXoa;
         private System.Windows.Forms.Button btThem;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -413,5 +421,6 @@ namespace BTN_LTCSDL
         private System.Windows.Forms.ComboBox cbSanPham;
         private System.Windows.Forms.NumericUpDown numericUpDownSLSP;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btSua;
     }
 }

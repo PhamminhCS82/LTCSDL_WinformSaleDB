@@ -13,13 +13,14 @@ namespace BTN_LTCSDL.DAO
         {
             db = new LaptopPCSaleDBEntities();
         }
-        public dynamic layDSDH()
+        public dynamic LayDSDH()
         {
             var ds = db.Orders.Select(s => new
             {
                 s.OrderID,
                 s.OrderDate,
                 s.Employee.FirstName,
+                s.Employee.LastName,
                 s.Customer.CompanyName
             }).ToList();
             return ds;
@@ -30,7 +31,8 @@ namespace BTN_LTCSDL.DAO
             var ds = db.Employees.Select(s => new
             {
                 s.EmployeeID,
-                s.LastName
+                s.LastName,
+                s.FirstName
             }).ToList();
             return ds;
         }
@@ -86,6 +88,7 @@ namespace BTN_LTCSDL.DAO
                 }).ToList();
             return ds;
         }
+
         //public bool KiemTraSPDonHang(OrderDetail d)
         //{
         //    int? sl;

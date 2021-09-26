@@ -60,6 +60,7 @@ namespace BTN_LTCSDL
             this.dtgvDonHang.Size = new System.Drawing.Size(864, 275);
             this.dtgvDonHang.TabIndex = 0;
             this.dtgvDonHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDonHang_CellClick);
+            this.dtgvDonHang.DoubleClick += new System.EventHandler(this.dtgvDonHang_DoubleClick);
             // 
             // groupBox2
             // 
@@ -94,6 +95,7 @@ namespace BTN_LTCSDL
             this.btXoa.TabIndex = 2;
             this.btXoa.Text = "Hủy đơn";
             this.btXoa.UseVisualStyleBackColor = true;
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
             // 
             // btSua
             // 
@@ -104,6 +106,7 @@ namespace BTN_LTCSDL
             this.btSua.TabIndex = 1;
             this.btSua.Text = "Sửa";
             this.btSua.UseVisualStyleBackColor = true;
+            this.btSua.Click += new System.EventHandler(this.btSua_Click);
             // 
             // btThem
             // 
