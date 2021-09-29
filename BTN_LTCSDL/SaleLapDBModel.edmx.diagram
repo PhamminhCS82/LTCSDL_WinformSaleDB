@@ -12,7 +12,6 @@
         <EntityTypeShape EntityType="LaptopPCSaleModel.Order" Width="1.5" PointX="9.625" PointY="2" IsExpanded="true" />
         <EntityTypeShape EntityType="LaptopPCSaleModel.Product" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="LaptopPCSaleModel.Supplier" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="LaptopPCSaleModel.sysdiagram" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
         <AssociationConnector Association="LaptopPCSaleModel.FK_Products_Categories" ManuallyRouted="false" />
         <AssociationConnector Association="LaptopPCSaleModel.FK_Orders_Orders" ManuallyRouted="false" />
         <AssociationConnector Association="LaptopPCSaleModel.FK_Orders_Employees" ManuallyRouted="false" />

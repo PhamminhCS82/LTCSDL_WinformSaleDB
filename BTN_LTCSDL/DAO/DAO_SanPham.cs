@@ -93,5 +93,11 @@ namespace BTN_LTCSDL.DAO
             else
                 return false;
         }
+        public Product LaySP(int maSP) 
+        {
+            Product product = db.Products.
+                Where(p => p.ProductID == maSP).First();
+            return product;
+        }
     }
 }
