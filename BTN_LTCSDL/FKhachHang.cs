@@ -40,7 +40,7 @@ namespace BTN_LTCSDL
 
         private void btThem_Click(object sender, EventArgs e)
         {
-            if (txtTenKhachHang.Text == "" || txtDiaChi.Text == "" || 
+            if (txtTenKhachHang.Text == "" || txtDiaChi.Text == "" ||
                 txtSoDienThoai.Text == "" || txtTenCongTy.Text == "")
                 MessageBox.Show("Vui lòng điền dầy đủ thông tin", "Thông báo");
             else
@@ -48,7 +48,7 @@ namespace BTN_LTCSDL
                 Customer khachHang = new Customer();
                 khachHang.Address = txtDiaChi.Text.Trim();
                 khachHang.CompanyName = txtTenCongTy.Text.Trim();
-                khachHang.Phone = txtSoDienThoai.Text.Trim();
+                khachHang.Phone = txtSoDienThoai.Text;
                 khachHang.ContactName = txtTenKhachHang.Text.Trim();
                 if (busKhachHang.ThemKhachHang(khachHang))
                 {
@@ -57,30 +57,6 @@ namespace BTN_LTCSDL
                 }
                 else
                     MessageBox.Show("Đã xảy ra lỗi khi thêm khách hàng");
-            }    
-        }
-
-        private void btDong_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        //Sự kiện kiểm tra và chỉ cho nhập số
-        private void txtSoDienThoai_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
-                e.Handled = true;
-        }
-
-        private void dtgvKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if(e.RowIndex >= 0 && e.RowIndex < dtgvKhachHang.Rows.Count)
-            {
-                txtMaKhachHang.Text = dtgvKhachHang.Rows[e.RowIndex].Cells["CustomerID"].Value.ToString();
-                txtDiaChi.Text = dtgvKhachHang.Rows[e.RowIndex].Cells["Address"].Value.ToString();
-                txtTenKhachHang.Text = dtgvKhachHang.Rows[e.RowIndex].Cells["ContactName"].Value.ToString();
-                txtSoDienThoai.Text = dtgvKhachHang.Rows[e.RowIndex].Cells["Phone"].Value.ToString();
-                txtTenCongTy.Text = dtgvKhachHang.Rows[e.RowIndex].Cells["Companyname"].Value.ToString();
             }
         }
 
@@ -108,14 +84,14 @@ namespace BTN_LTCSDL
         }
 
         private void btXoa_Click(object sender, EventArgs e)
-        {
-            if(MessageBox.Show("Bạn có muốn xóa khách hàng này?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+        { 
+            if (MessageBox.Show("Bạn có muốn xóa khách hàng này?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 Customer khachHang = new Customer();
                 khachHang.CustomerID = int.Parse(dtgvKhachHang.CurrentRow.Cells["CustomerID"].Value.ToString());
                 if (busKhachHang.XoaKhachHang(khachHang))
                 {
-                    CapNhat(); 
+                    CapNhat();
 
                     //Clear các giá trị trên Textbox
                     txtDiaChi.Text = "";
@@ -128,6 +104,29 @@ namespace BTN_LTCSDL
                 else
                     MessageBox.Show("Đã xảy ra lỗi khi xóa khách hàng", "Thông báo");
             }
+        }
+
+        private void btDong_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void dtgvKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex < dtgvKhachHang.Rows.Count)
+            {
+                txtMaKhachHang.Text = dtgvKhachHang.Rows[e.RowIndex].Cells["CustomerID"].Value.ToString();
+                txtDiaChi.Text = dtgvKhachHang.Rows[e.RowIndex].Cells["Address"].Value.ToString();
+                txtTenKhachHang.Text = dtgvKhachHang.Rows[e.RowIndex].Cells["ContactName"].Value.ToString();
+                txtSoDienThoai.Text = dtgvKhachHang.Rows[e.RowIndex].Cells["Phone"].Value.ToString();
+                txtTenCongTy.Text = dtgvKhachHang.Rows[e.RowIndex].Cells["Companyname"].Value.ToString();
+            }
+        }
+
+        private void txtSoDienThoai_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
         }
     }
 }

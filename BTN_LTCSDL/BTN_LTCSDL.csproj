@@ -55,8 +55,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BUS\BUS_KhachHang.cs" />
     <Compile Include="BUS\BUS_DonHang.cs" />
+    <Compile Include="BUS\BUS_KhachHang.cs" />
     <Compile Include="BUS\BUS_SanPham.cs" />
     <Compile Include="Category.cs">
       <DependentUpon>SaleLapDBModel.tt</DependentUpon>
@@ -64,11 +64,17 @@
     <Compile Include="Customer.cs">
       <DependentUpon>SaleLapDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAO\DAO_KhachHang.cs" />
     <Compile Include="DAO\DAO_DonHang.cs" />
+    <Compile Include="DAO\DAO_KhachHang.cs" />
     <Compile Include="DAO\DAO_SanPham.cs" />
     <Compile Include="Employee.cs">
       <DependentUpon>SaleLapDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FCTDonHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FCTDonHang.Designer.cs">
+      <DependentUpon>FCTDonHang.cs</DependentUpon>
     </Compile>
     <Compile Include="FDangNhap.cs">
       <SubType>Form</SubType>
@@ -76,18 +82,11 @@
     <Compile Include="FDangNhap.Designer.cs">
       <DependentUpon>FDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="FKhachHang.cs">
+    <Compile Include="FMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FKhachHang.Designer.cs">
-      <DependentUpon>FKhachHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.cs">
-    <Compile Include="FCTDonHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FCTDonHang.Designer.cs">
-      <DependentUpon>FCTDonHang.cs</DependentUpon>
+    <Compile Include="FMenu.Designer.cs">
+      <DependentUpon>FMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="FDonHang.cs">
       <SubType>Form</SubType>
@@ -95,11 +94,17 @@
     <Compile Include="FDonHang.Designer.cs">
       <DependentUpon>FDonHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="FMenu.cs">
+    <Compile Include="FKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FMenu.Designer.cs">
-      <DependentUpon>FMenu.cs</DependentUpon>
+    <Compile Include="FKhachHang.Designer.cs">
+      <DependentUpon>FKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FGiaoDienChinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FGiaoDienChinh.Designer.cs">
+      <DependentUpon>FGiaoDienChinh.cs</DependentUpon>
     </Compile>
     <Compile Include="FSanPham.cs">
       <SubType>Form</SubType>
@@ -133,32 +138,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SaleLapDBModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>SaleLapDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_helpdiagrams_Result.cs">
-      <DependentUpon>SaleLapDBModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Supplier.cs">
       <DependentUpon>SaleLapDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>SaleLapDBModel.tt</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="FDangNhap.resx">
-      <DependentUpon>FDangNhap.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FKhachHang.resx">
-      <DependentUpon>FKhachHang.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FCTDonHang.resx">
       <DependentUpon>FCTDonHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FDangNhap.resx">
+      <DependentUpon>FDangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FDonHang.resx">
       <DependentUpon>FDonHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FKhachHang.resx">
+      <DependentUpon>FKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FMenu.resx">
       <DependentUpon>FMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FGiaoDienChinh.resx">
+      <DependentUpon>FGiaoDienChinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FSanPham.resx">
       <DependentUpon>FSanPham.cs</DependentUpon>
@@ -199,8 +198,8 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <None Include="Resources\Unlock.png" />
     <None Include="Resources\Profile.png" />
+    <Content Include="Resources\Unlock.png" />
     <Content Include="SaleLapDBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>SaleLapDBModel.Context.cs</LastGenOutput>

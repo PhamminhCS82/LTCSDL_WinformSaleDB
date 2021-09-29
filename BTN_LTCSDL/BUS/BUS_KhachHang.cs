@@ -29,7 +29,7 @@ namespace BTN_LTCSDL.BUS
                 daoKhachHang.ThemKhachHang(khachHang);
                 return true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 return false;

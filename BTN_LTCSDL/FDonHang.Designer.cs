@@ -3,7 +3,7 @@ namespace BTN_LTCSDL
 {
     partial class FDonHang
     {
-        // <summary>
+        /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
@@ -68,7 +68,7 @@ namespace BTN_LTCSDL
             this.groupBox2.Controls.Add(this.btXoa);
             this.groupBox2.Controls.Add(this.btSua);
             this.groupBox2.Controls.Add(this.btThem);
-            this.groupBox2.Location = new System.Drawing.Point(348, 263);
+            this.groupBox2.Location = new System.Drawing.Point(330, 245);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(528, 100);
             this.groupBox2.TabIndex = 2;
@@ -124,7 +124,7 @@ namespace BTN_LTCSDL
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(231, 31);
+            this.label7.Location = new System.Drawing.Point(232, 18);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(418, 38);
             this.label7.TabIndex = 3;
@@ -208,7 +208,7 @@ namespace BTN_LTCSDL
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtMaDonHang);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 91);
+            this.groupBox1.Location = new System.Drawing.Point(12, 70);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(864, 166);
             this.groupBox1.TabIndex = 1;
@@ -224,6 +224,7 @@ namespace BTN_LTCSDL
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dtgvDonHang);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FDonHang";
             this.Text = "Danh mục sản phẩm";
             this.Load += new System.EventHandler(this.FDonHang_Load);

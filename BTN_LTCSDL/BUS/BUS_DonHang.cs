@@ -10,7 +10,6 @@ using System.Windows.Forms;
 
 namespace BTN_LTCSDL.BUS
 {
-    
     class BUS_DonHang
     {
         DAO_DonHang dDH;

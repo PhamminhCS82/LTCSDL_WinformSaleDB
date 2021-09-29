@@ -16,21 +16,5 @@ namespace BTN_LTCSDL
         {
             InitializeComponent();
         }
-
-        private void qlSPToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FSanPham f = new FSanPham();
-            f.MdiParent = this;
-            f.StartPosition = FormStartPosition.CenterScreen;
-            f.Show();
-        }
-
-        private void qlDHToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FDonHang f = new FDonHang();
-            f.MdiParent = this;
-            f.StartPosition = FormStartPosition.CenterScreen;
-            f.Show();
-        }
     }
 }

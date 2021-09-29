@@ -263,6 +263,7 @@ namespace BTN_LTCSDL
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dtgvSanPham);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FSanPham";
             this.Text = "Danh mục sản phẩm";
             this.Load += new System.EventHandler(this.FSanPham_Load);

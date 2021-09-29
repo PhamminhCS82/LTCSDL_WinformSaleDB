@@ -22,13 +22,6 @@ namespace BTN_LTCSDL.BUS
             dtgv.DataSource = daoSanPham.LayDSSanPham();
         }
 
-        public void HienThiDSSanPham(ComboBox dsSP)
-        {
-            dsSP.DataSource = daoSanPham.LayDSSanPham();
-            dsSP.DisplayMember = "ProductName";
-            dsSP.ValueMember = "ProductID";
-        }
-
         public void HienThiDSLoaiSanPham(ComboBox cb)
         {
             cb.DataSource = daoSanPham.LayDSLoaiSanPham();
@@ -50,9 +43,8 @@ namespace BTN_LTCSDL.BUS
                 daoSanPham.ThemSanPham(sanPham);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
                 return false;
             }
         }
@@ -64,9 +56,8 @@ namespace BTN_LTCSDL.BUS
                 daoSanPham.XoaSanPham(sanPham);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
                 return false;
             }
         }
@@ -78,12 +69,12 @@ namespace BTN_LTCSDL.BUS
                 daoSanPham.SuaSanPham(sanPham);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
                 return false;
             }
         }
+
         public Product LaySP(int maSP)
         {
             return daoSanPham.LaySP(maSP);
