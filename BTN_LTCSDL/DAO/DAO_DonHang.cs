@@ -139,5 +139,11 @@ namespace BTN_LTCSDL.DAO
             List <LayDSDonHang_Result> ds = db.LayDSDonHang().ToList();
             return ds;
         }
+        public List<LayDSCTDonHang_Result> LayDSCTDHReport()
+        {
+            //Gọi store procedure lấy DS đơn hàng
+            List<LayDSCTDonHang_Result> ds = db.LayDSCTDonHang().ToList();
+            return ds;
+        }
     }
 }

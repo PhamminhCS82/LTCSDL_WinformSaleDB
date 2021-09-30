@@ -54,12 +54,13 @@ namespace BTN_LTCSDL
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btThoat = new System.Windows.Forms.Button();
+            this.btSua = new System.Windows.Forms.Button();
             this.btXoa = new System.Windows.Forms.Button();
             this.btThem = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.gVCTDH = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
-            this.btSua = new System.Windows.Forms.Button();
+            this.btnReport = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSLSP)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -297,6 +298,17 @@ namespace BTN_LTCSDL
             this.btThoat.UseVisualStyleBackColor = true;
             this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
             // 
+            // btSua
+            // 
+            this.btSua.Location = new System.Drawing.Point(226, 23);
+            this.btSua.Margin = new System.Windows.Forms.Padding(4);
+            this.btSua.Name = "btSua";
+            this.btSua.Size = new System.Drawing.Size(100, 71);
+            this.btSua.TabIndex = 2;
+            this.btSua.Text = "Sửa";
+            this.btSua.UseVisualStyleBackColor = true;
+            this.btSua.Click += new System.EventHandler(this.btSua_Click);
+            // 
             // btXoa
             // 
             this.btXoa.Location = new System.Drawing.Point(116, 23);
@@ -354,22 +366,23 @@ namespace BTN_LTCSDL
             this.label7.TabIndex = 12;
             this.label7.Text = "CHI TIẾT ĐƠN HÀNG";
             // 
-            // btSua
+            // btnReport
             // 
-            this.btSua.Location = new System.Drawing.Point(226, 23);
-            this.btSua.Margin = new System.Windows.Forms.Padding(4);
-            this.btSua.Name = "btSua";
-            this.btSua.Size = new System.Drawing.Size(100, 71);
-            this.btSua.TabIndex = 2;
-            this.btSua.Text = "Sửa";
-            this.btSua.UseVisualStyleBackColor = true;
-            this.btSua.Click += new System.EventHandler(this.btSua_Click);
+            this.btnReport.Location = new System.Drawing.Point(56, 279);
+            this.btnReport.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(100, 71);
+            this.btnReport.TabIndex = 13;
+            this.btnReport.Text = "Report chi tiết";
+            this.btnReport.UseVisualStyleBackColor = true;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // FCTDonHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1019, 751);
+            this.Controls.Add(this.btnReport);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -422,5 +435,6 @@ namespace BTN_LTCSDL
         private System.Windows.Forms.NumericUpDown numericUpDownSLSP;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btSua;
+        private System.Windows.Forms.Button btnReport;
     }
 }

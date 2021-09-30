@@ -16,7 +16,7 @@ namespace BTN_LTCSDL
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FMenu());
+            Application.Run(new FGiaoDienChinh());
         }
     }
 }

@@ -182,5 +182,10 @@ namespace BTN_LTCSDL
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LayDSDonHang_Result>("LayDSDonHang");
         }
+    
+        public virtual ObjectResult<LayDSCTDonHang_Result> LayDSCTDonHang()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LayDSCTDonHang_Result>("LayDSCTDonHang");
+        }
     }
 }

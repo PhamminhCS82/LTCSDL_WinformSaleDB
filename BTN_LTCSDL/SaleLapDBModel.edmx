@@ -160,6 +160,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="LayDSCTDonHang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="LayDSDonHang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="orderDetail_KTCTDonHang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="OrderID" Type="int" Mode="In" />
@@ -443,6 +444,7 @@
             <Parameter Name="ProductID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="LayDSDonHang" ReturnType="Collection(LaptopPCSaleModel.LayDSDonHang_Result)" />
+          <FunctionImport Name="LayDSCTDonHang" ReturnType="Collection(LaptopPCSaleModel.LayDSCTDonHang_Result)" />
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -474,6 +476,14 @@
           <Property Type="String" Name="FirstName" Nullable="true" MaxLength="10" />
           <Property Type="String" Name="LastName" Nullable="true" MaxLength="20" />
           <Property Type="String" Name="CompanyName" Nullable="false" MaxLength="40" />
+        </ComplexType>
+        <ComplexType Name="LayDSCTDonHang_Result">
+          <Property Type="Int32" Name="OrderID" Nullable="false" />
+          <Property Type="Int32" Name="ProductID" Nullable="false" />
+          <Property Type="Decimal" Name="UnitPrice" Nullable="false" Precision="19" />
+          <Property Type="Int16" Name="Quantity" Nullable="false" />
+          <Property Type="Single" Name="Discount" Nullable="false" />
+          <Property Type="String" Name="ProductName" Nullable="false" MaxLength="40" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -580,6 +590,18 @@
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="LayDSCTDonHang" FunctionName="LaptopPCSaleModel.Store.LayDSCTDonHang">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LaptopPCSaleModel.LayDSCTDonHang_Result">
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

@@ -135,5 +135,9 @@ namespace BTN_LTCSDL.BUS
         {
             rp.SetDataSource(dDH.LayDSDHReport());
         }
+        public void HienThiDSCTDonHang(ReportCTDH rp)
+        {
+            rp.SetDataSource(dDH.LayDSCTDHReport());
+        }
     }
 }

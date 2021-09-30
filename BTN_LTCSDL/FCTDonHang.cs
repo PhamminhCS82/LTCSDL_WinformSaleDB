@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BTN_LTCSDL.BUS;
+using BTN_LTCSDL.Report;
 
 namespace BTN_LTCSDL
 {
@@ -134,6 +135,15 @@ namespace BTN_LTCSDL
                 txtSoLuongConLai.Text = p.UnitsInStock.ToString();
                 
             }
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            ReportCTDH report = new ReportCTDH();
+            FReport f = new FReport();
+            bDH.HienThiDSCTDonHang(report);
+            f.FReportViewer.ReportSource = report;
+            f.Show();
         }
     }
 }
