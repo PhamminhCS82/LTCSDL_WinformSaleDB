@@ -1,5 +1,5 @@
 ## LTCSDL_WinformSaleDB
-Bài tập nhóm môn LTCSDL
+<space>Bài tập nhóm môn LTCSDL<space>
 <space>Đăng Nhập tài khoản: admin<space>
-#password: abcd1234
-Sửa datasource=<Tên máy chủ> tại App.config
+<space>#password: abcd1234<space>
+<space>Sửa datasource=<Tên máy chủ> tại App.config<space>
