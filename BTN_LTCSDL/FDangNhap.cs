@@ -21,7 +21,7 @@ namespace BTN_LTCSDL
             if (busQL.KTDangNhap(u))
             {
                 this.Hide();
-                FMenu f = new FMenu();
+                FGiaoDienChinh f = new FGiaoDienChinh();
                 f.Closed += (s, args) => this.Close();
                 f.Show();
             }

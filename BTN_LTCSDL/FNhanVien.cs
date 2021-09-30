@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BTN_LTCSDL.BUS;
+using BTN_LTCSDL.Report;
 
 namespace BTN_LTCSDL
 {
@@ -126,6 +127,15 @@ namespace BTN_LTCSDL
                         MessageBox.Show("Xóa nhân viên thất bại", "Thông báo");
                 }
             }
+        }
+
+        private void btTaoReport_Click(object sender, EventArgs e)
+        {
+            ReportNV report = new ReportNV();
+            FReport f = new FReport();
+            report.SetDataSource(busNhanVien.HienThiDSNhanVien());
+            f.FReportViewer.ReportSource = report;
+            f.Show();
         }
     }
 }

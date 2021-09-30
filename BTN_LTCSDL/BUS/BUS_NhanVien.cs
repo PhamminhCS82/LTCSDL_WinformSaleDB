@@ -70,5 +70,9 @@ namespace BTN_LTCSDL.BUS
                 return false;
             }
         }
+        public List<Employee> HienThiDSNhanVien()
+        {
+            return daoNhanVien.LayDSNhanVienRp();
+        }
     }
 }

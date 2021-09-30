@@ -71,5 +71,10 @@ namespace BTN_LTCSDL.DAO
             else
                 return false;
         }
+        public List<Employee> LayDSNhanVienRp()
+        {
+            List<Employee> ds = db.Employees.Select(s => s).ToList();
+            return ds;
+        }
     }
 }

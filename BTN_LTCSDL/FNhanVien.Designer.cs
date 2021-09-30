@@ -37,6 +37,8 @@ namespace BTN_LTCSDL
             this.btSua = new System.Windows.Forms.Button();
             this.btThem = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtTen = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtHo = new System.Windows.Forms.TextBox();
@@ -45,8 +47,6 @@ namespace BTN_LTCSDL
             this.label2 = new System.Windows.Forms.Label();
             this.txtMaNhanVien = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtTen = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvNhanVien)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -103,6 +103,7 @@ namespace BTN_LTCSDL
             this.btTaoReport.TabIndex = 3;
             this.btTaoReport.Text = "Tạo Report";
             this.btTaoReport.UseVisualStyleBackColor = true;
+            this.btTaoReport.Click += new System.EventHandler(this.btTaoReport_Click);
             // 
             // btXoa
             // 
@@ -158,6 +159,22 @@ namespace BTN_LTCSDL
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin nhân viên";
+            // 
+            // txtTen
+            // 
+            this.txtTen.Location = new System.Drawing.Point(650, 41);
+            this.txtTen.Name = "txtTen";
+            this.txtTen.Size = new System.Drawing.Size(124, 22);
+            this.txtTen.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(596, 44);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(37, 17);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Tên:";
             // 
             // txtDiaChi
             // 
@@ -223,22 +240,6 @@ namespace BTN_LTCSDL
             this.label1.Size = new System.Drawing.Size(97, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã nhân viên:";
-            // 
-            // txtTen
-            // 
-            this.txtTen.Location = new System.Drawing.Point(650, 41);
-            this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(124, 22);
-            this.txtTen.TabIndex = 11;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(596, 44);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 17);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Tên:";
             // 
             // label6
             // 
