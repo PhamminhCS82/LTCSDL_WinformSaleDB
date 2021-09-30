@@ -40,6 +40,7 @@ namespace BTN_LTCSDL
             //Không cho nhập ở combobox
             cbKhachHang.DropDownStyle = ComboBoxStyle.DropDownList;
             cbNhanVien.DropDownStyle = ComboBoxStyle.DropDownList;
+            dtgvDonHang.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
         private void btDong_Click(object sender, EventArgs e)
@@ -74,9 +75,9 @@ namespace BTN_LTCSDL
             if (e.RowIndex >= 0 && e.RowIndex < dtgvDonHang.Rows.Count)
             {
                 txtMaDonHang.Text = dtgvDonHang.Rows[e.RowIndex].Cells["OrderID"].Value.ToString();
-                dtpNgayDatHang.Text = dtgvDonHang.Rows[e.RowIndex].Cells[1].Value.ToString();
-                cbNhanVien.Text = dtgvDonHang.Rows[e.RowIndex].Cells[2].Value.ToString();
-                cbKhachHang.Text = dtgvDonHang.Rows[e.RowIndex].Cells[3].Value.ToString();
+                dtpNgayDatHang.Text = dtgvDonHang.Rows[e.RowIndex].Cells["OrderDate"].Value.ToString();
+                cbNhanVien.Text = dtgvDonHang.Rows[e.RowIndex].Cells["LastName"].Value.ToString();
+                cbKhachHang.Text = dtgvDonHang.Rows[e.RowIndex].Cells["CompanyName"].Value.ToString();
             }
         }
 

@@ -31,12 +31,13 @@ namespace BTN_LTCSDL
         {
             this.dtgvNhanVien = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btDong = new System.Windows.Forms.Button();
             this.btTaoReport = new System.Windows.Forms.Button();
             this.btXoa = new System.Windows.Forms.Button();
             this.btSua = new System.Windows.Forms.Button();
             this.btThem = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtTen = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtHo = new System.Windows.Forms.TextBox();
@@ -45,8 +46,6 @@ namespace BTN_LTCSDL
             this.label2 = new System.Windows.Forms.Label();
             this.txtMaNhanVien = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtTen = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvNhanVien)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -67,31 +66,18 @@ namespace BTN_LTCSDL
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btDong);
             this.groupBox2.Controls.Add(this.btTaoReport);
             this.groupBox2.Controls.Add(this.btXoa);
             this.groupBox2.Controls.Add(this.btSua);
             this.groupBox2.Controls.Add(this.btThem);
-            this.groupBox2.Location = new System.Drawing.Point(228, 261);
+            this.groupBox2.Location = new System.Drawing.Point(340, 261);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(645, 100);
+            this.groupBox2.Size = new System.Drawing.Size(533, 100);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Các chức năng";
-            // 
-            // btDong
-            // 
-            this.btDong.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btDong.Location = new System.Drawing.Point(525, 21);
-            this.btDong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btDong.Name = "btDong";
-            this.btDong.Size = new System.Drawing.Size(103, 73);
-            this.btDong.TabIndex = 4;
-            this.btDong.Text = "Đóng";
-            this.btDong.UseVisualStyleBackColor = true;
-            this.btDong.Click += new System.EventHandler(this.btDong_Click);
             // 
             // btTaoReport
             // 
@@ -103,6 +89,7 @@ namespace BTN_LTCSDL
             this.btTaoReport.TabIndex = 3;
             this.btTaoReport.Text = "Tạo Report";
             this.btTaoReport.UseVisualStyleBackColor = true;
+            this.btTaoReport.Click += new System.EventHandler(this.btTaoReport_Click);
             // 
             // btXoa
             // 
@@ -158,6 +145,22 @@ namespace BTN_LTCSDL
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin nhân viên";
+            // 
+            // txtTen
+            // 
+            this.txtTen.Location = new System.Drawing.Point(650, 41);
+            this.txtTen.Name = "txtTen";
+            this.txtTen.Size = new System.Drawing.Size(124, 22);
+            this.txtTen.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(596, 44);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(37, 17);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Tên:";
             // 
             // txtDiaChi
             // 
@@ -224,22 +227,6 @@ namespace BTN_LTCSDL
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã nhân viên:";
             // 
-            // txtTen
-            // 
-            this.txtTen.Location = new System.Drawing.Point(650, 41);
-            this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(124, 22);
-            this.txtTen.TabIndex = 11;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(596, 44);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 17);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Tên:";
-            // 
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -277,7 +264,6 @@ namespace BTN_LTCSDL
 
         private System.Windows.Forms.DataGridView dtgvNhanVien;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btDong;
         private System.Windows.Forms.Button btTaoReport;
         private System.Windows.Forms.Button btXoa;
         private System.Windows.Forms.Button btSua;

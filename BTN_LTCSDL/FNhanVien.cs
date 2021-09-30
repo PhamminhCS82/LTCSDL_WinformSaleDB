@@ -127,5 +127,10 @@ namespace BTN_LTCSDL
                 }
             }
         }
+
+        private void btTaoReport_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

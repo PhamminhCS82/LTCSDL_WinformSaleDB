@@ -44,11 +44,11 @@ namespace BTN_LTCSDL
             this.txtMaSanPham = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btDong = new System.Windows.Forms.Button();
             this.btXoa = new System.Windows.Forms.Button();
             this.btSua = new System.Windows.Forms.Button();
             this.btThem = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.btReport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvSanPham)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSoLuong)).BeginInit();
@@ -188,7 +188,7 @@ namespace BTN_LTCSDL
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btDong);
+            this.groupBox2.Controls.Add(this.btReport);
             this.groupBox2.Controls.Add(this.btXoa);
             this.groupBox2.Controls.Add(this.btSua);
             this.groupBox2.Controls.Add(this.btThem);
@@ -198,17 +198,6 @@ namespace BTN_LTCSDL
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Các chức năng";
-            // 
-            // btDong
-            // 
-            this.btDong.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btDong.Location = new System.Drawing.Point(402, 21);
-            this.btDong.Name = "btDong";
-            this.btDong.Size = new System.Drawing.Size(103, 73);
-            this.btDong.TabIndex = 3;
-            this.btDong.Text = "Đóng";
-            this.btDong.UseVisualStyleBackColor = true;
-            this.btDong.Click += new System.EventHandler(this.btDong_Click);
             // 
             // btXoa
             // 
@@ -254,6 +243,17 @@ namespace BTN_LTCSDL
             this.label7.TabIndex = 3;
             this.label7.Text = "DANH MỤC SẢN PHẨM";
             // 
+            // btReport
+            // 
+            this.btReport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btReport.Location = new System.Drawing.Point(409, 21);
+            this.btReport.Name = "btReport";
+            this.btReport.Size = new System.Drawing.Size(103, 73);
+            this.btReport.TabIndex = 3;
+            this.btReport.Text = "Tạo Report";
+            this.btReport.UseVisualStyleBackColor = true;
+            this.btReport.Click += new System.EventHandler(this.btReport_Click);
+            // 
             // FSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -293,11 +293,11 @@ namespace BTN_LTCSDL
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cbNhaCungCap;
         private System.Windows.Forms.ComboBox cbLoaiSanPham;
-        private System.Windows.Forms.Button btDong;
         private System.Windows.Forms.Button btXoa;
         private System.Windows.Forms.Button btSua;
         private System.Windows.Forms.Button btThem;
         private System.Windows.Forms.NumericUpDown numSoLuong;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btReport;
     }
 }

@@ -31,7 +31,6 @@ namespace BTN_LTCSDL
         {
             this.dtgvDonHang = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btDong = new System.Windows.Forms.Button();
             this.btXoa = new System.Windows.Forms.Button();
             this.btSua = new System.Windows.Forms.Button();
             this.btThem = new System.Windows.Forms.Button();
@@ -45,6 +44,7 @@ namespace BTN_LTCSDL
             this.cbNhanVien = new System.Windows.Forms.ComboBox();
             this.dtpNgayDatHang = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btDong = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDonHang)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -68,23 +68,12 @@ namespace BTN_LTCSDL
             this.groupBox2.Controls.Add(this.btXoa);
             this.groupBox2.Controls.Add(this.btSua);
             this.groupBox2.Controls.Add(this.btThem);
-            this.groupBox2.Location = new System.Drawing.Point(330, 245);
+            this.groupBox2.Location = new System.Drawing.Point(328, 245);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(528, 100);
+            this.groupBox2.Size = new System.Drawing.Size(530, 100);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Các chức năng";
-            // 
-            // btDong
-            // 
-            this.btDong.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btDong.Location = new System.Drawing.Point(402, 21);
-            this.btDong.Name = "btDong";
-            this.btDong.Size = new System.Drawing.Size(103, 73);
-            this.btDong.TabIndex = 3;
-            this.btDong.Text = "Đóng";
-            this.btDong.UseVisualStyleBackColor = true;
-            this.btDong.Click += new System.EventHandler(this.btDong_Click);
             // 
             // btXoa
             // 
@@ -215,6 +204,17 @@ namespace BTN_LTCSDL
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin đơn hàng";
             // 
+            // btDong
+            // 
+            this.btDong.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btDong.Location = new System.Drawing.Point(406, 21);
+            this.btDong.Name = "btDong";
+            this.btDong.Size = new System.Drawing.Size(103, 73);
+            this.btDong.TabIndex = 3;
+            this.btDong.Text = "Đóng";
+            this.btDong.UseVisualStyleBackColor = true;
+            this.btDong.Click += new System.EventHandler(this.btDong_Click);
+            // 
             // FDonHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -241,7 +241,6 @@ namespace BTN_LTCSDL
 
         private System.Windows.Forms.DataGridView dtgvDonHang;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btDong;
         private System.Windows.Forms.Button btXoa;
         private System.Windows.Forms.Button btSua;
         private System.Windows.Forms.Button btThem;
@@ -255,5 +254,6 @@ namespace BTN_LTCSDL
         private System.Windows.Forms.ComboBox cbNhanVien;
         private System.Windows.Forms.DateTimePicker dtpNgayDatHang;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btDong;
     }
 }

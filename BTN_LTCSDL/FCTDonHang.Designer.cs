@@ -53,13 +53,13 @@ namespace BTN_LTCSDL
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btThoat = new System.Windows.Forms.Button();
             this.btSua = new System.Windows.Forms.Button();
             this.btXoa = new System.Windows.Forms.Button();
             this.btThem = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.gVCTDH = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSLSP)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -273,28 +273,17 @@ namespace BTN_LTCSDL
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btThoat);
+            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.btSua);
             this.groupBox2.Controls.Add(this.btXoa);
             this.groupBox2.Controls.Add(this.btThem);
-            this.groupBox2.Location = new System.Drawing.Point(533, 256);
+            this.groupBox2.Location = new System.Drawing.Point(524, 256);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(437, 102);
+            this.groupBox2.Size = new System.Drawing.Size(446, 102);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
-            // 
-            // btThoat
-            // 
-            this.btThoat.Location = new System.Drawing.Point(332, 23);
-            this.btThoat.Margin = new System.Windows.Forms.Padding(4);
-            this.btThoat.Name = "btThoat";
-            this.btThoat.Size = new System.Drawing.Size(100, 71);
-            this.btThoat.TabIndex = 3;
-            this.btThoat.Text = "Thoát";
-            this.btThoat.UseVisualStyleBackColor = true;
-            this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
             // 
             // btSua
             // 
@@ -364,6 +353,16 @@ namespace BTN_LTCSDL
             this.label7.TabIndex = 12;
             this.label7.Text = "CHI TIẾT ĐƠN HÀNG";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(334, 23);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 71);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Sửa";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // FCTDonHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -404,7 +403,6 @@ namespace BTN_LTCSDL
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.DateTimePicker dtpNgayDonHang;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btThoat;
         private System.Windows.Forms.Button btXoa;
         private System.Windows.Forms.Button btThem;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -421,5 +419,6 @@ namespace BTN_LTCSDL
         private System.Windows.Forms.NumericUpDown numericUpDownSLSP;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btSua;
+        private System.Windows.Forms.Button button1;
     }
 }

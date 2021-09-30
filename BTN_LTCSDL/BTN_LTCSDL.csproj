@@ -114,6 +114,12 @@
     <Compile Include="FSanPham.Designer.cs">
       <DependentUpon>FSanPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="LayDSCTDonHang_Result.cs">
+      <DependentUpon>SaleLapDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LayDSDonHang_Result.cs">
+      <DependentUpon>SaleLapDBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Order.cs">
       <DependentUpon>SaleLapDBModel.tt</DependentUpon>
     </Compile>
@@ -141,6 +147,9 @@
       <DependentUpon>SaleLapDBModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Supplier.cs">
+      <DependentUpon>SaleLapDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
       <DependentUpon>SaleLapDBModel.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FCTDonHang.resx">

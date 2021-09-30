@@ -78,6 +78,7 @@ namespace BTN_LTCSDL
             p = busSanPham.LaySP(maDH);
             txtMaDH.Text = maDH.ToString();
             flag = true;
+            gVCTDH.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
         private void gVCTDH_CellClick(object sender, DataGridViewCellEventArgs e)
