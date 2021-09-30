@@ -1,4 +1,5 @@
 ﻿using BTN_LTCSDL.DAO;
+using BTN_LTCSDL.Report;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -116,6 +117,23 @@ namespace BTN_LTCSDL.BUS
             {
                 return false;
             }
+        }
+        public bool XoaCTDonHang(OrderDetail d)
+        {
+            if (dDH.KTCTDonHang(d))
+            {
+                dDH.XoaCTDH(d);
+                return true;
+            }
+            return false;
+        }
+        public bool SuaCTDonHang(OrderDetail d)
+        {
+            return dDH.SuaCTDH(d);
+        }
+        public void HienThiDSDonHang(ReportDH rp)
+        {
+            rp.SetDataSource(dDH.LayDSDHReport());
         }
     }
 }

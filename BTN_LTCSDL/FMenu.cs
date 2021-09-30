@@ -32,5 +32,11 @@ namespace BTN_LTCSDL
             f.StartPosition = FormStartPosition.CenterScreen;
             f.Show();
         }
+
+        private void qlKHToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FKhachHang f = new FKhachHang();
+            f.Show();
+        }
     }
 }

@@ -34,6 +34,7 @@ namespace BTN_LTCSDL
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Supplier> Suppliers { get; set; }
+        public virtual DbSet<User> Users { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {
@@ -136,6 +137,50 @@ namespace BTN_LTCSDL
         public virtual int sp_upgraddiagrams()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
+        }
+    
+        public virtual ObjectResult<Nullable<int>> user_KTDangNhap(string username, string password)
+        {
+            var usernameParameter = username != null ?
+                new ObjectParameter("Username", username) :
+                new ObjectParameter("Username", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("Password", password) :
+                new ObjectParameter("Password", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("user_KTDangNhap", usernameParameter, passwordParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> orderDetail_KTCTDonHang(Nullable<int> orderID, Nullable<int> productID)
+        {
+            var orderIDParameter = orderID.HasValue ?
+                new ObjectParameter("OrderID", orderID) :
+                new ObjectParameter("OrderID", typeof(int));
+    
+            var productIDParameter = productID.HasValue ?
+                new ObjectParameter("ProductID", productID) :
+                new ObjectParameter("ProductID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("orderDetail_KTCTDonHang", orderIDParameter, productIDParameter);
+        }
+    
+        public virtual ObjectResult<orderDetail_LayCTDonHang_Result> orderDetail_LayCTDonHang(Nullable<int> orderID, Nullable<int> productID)
+        {
+            var orderIDParameter = orderID.HasValue ?
+                new ObjectParameter("OrderID", orderID) :
+                new ObjectParameter("OrderID", typeof(int));
+    
+            var productIDParameter = productID.HasValue ?
+                new ObjectParameter("ProductID", productID) :
+                new ObjectParameter("ProductID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<orderDetail_LayCTDonHang_Result>("orderDetail_LayCTDonHang", orderIDParameter, productIDParameter);
+        }
+    
+        public virtual ObjectResult<LayDSDonHang_Result> LayDSDonHang()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LayDSDonHang_Result>("LayDSDonHang");
         }
     }
 }

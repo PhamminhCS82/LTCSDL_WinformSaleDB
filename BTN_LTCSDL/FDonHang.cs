@@ -1,4 +1,5 @@
 ﻿using BTN_LTCSDL.BUS;
+using BTN_LTCSDL.Report;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -108,6 +109,15 @@ namespace BTN_LTCSDL
             }
             else
                 MessageBox.Show("Hủy đơn hàng thất bại");
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            ReportDH report = new ReportDH();
+            FReport f = new FReport();
+            busDH.HienThiDSDonHang(report);
+            f.FReportViewer.ReportSource = report;
+            f.Show();
         }
     }
 }

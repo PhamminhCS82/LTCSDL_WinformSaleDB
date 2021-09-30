@@ -45,6 +45,7 @@ namespace BTN_LTCSDL
             this.cbNhanVien = new System.Windows.Forms.ComboBox();
             this.dtpNgayDatHang = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnReport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDonHang)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -215,11 +216,23 @@ namespace BTN_LTCSDL
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin đơn hàng";
             // 
+            // btnReport
+            // 
+            this.btnReport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReport.Location = new System.Drawing.Point(24, 284);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(103, 73);
+            this.btnReport.TabIndex = 4;
+            this.btnReport.Text = "Report Đơn Hàng";
+            this.btnReport.UseVisualStyleBackColor = true;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
+            // 
             // FDonHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(888, 665);
+            this.Controls.Add(this.btnReport);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -254,5 +267,6 @@ namespace BTN_LTCSDL
         private System.Windows.Forms.ComboBox cbNhanVien;
         private System.Windows.Forms.DateTimePicker dtpNgayDatHang;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnReport;
     }
 }

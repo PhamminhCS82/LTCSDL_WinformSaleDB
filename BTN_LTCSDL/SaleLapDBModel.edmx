@@ -81,6 +81,13 @@
           <Property Name="City" Type="nvarchar" MaxLength="15" />
           <Property Name="Phone" Type="nvarchar" MaxLength="24" />
         </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="Username" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
         <Association Name="FK_OrderDetails_Orders">
           <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
           <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
@@ -153,6 +160,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="LayDSDonHang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="orderDetail_KTCTDonHang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="OrderID" Type="int" Mode="In" />
+          <Parameter Name="ProductID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="user_KTDangNhap" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Username" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+        </Function>
         <EntityContainer Name="LaptopPCSaleModelStoreContainer">
           <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
@@ -161,6 +177,7 @@
           <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Suppliers" EntityType="Self.Suppliers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_OrderDetails_Orders" Association="Self.FK_OrderDetails_Orders">
             <End Role="Orders" EntitySet="Orders" />
             <End Role="OrderDetails" EntitySet="OrderDetails" />
@@ -412,6 +429,20 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
+          <EntitySet Name="Users" EntityType="LaptopPCSaleModel.User" />
+          <FunctionImport Name="user_KTDangNhap" ReturnType="Collection(Int32)">
+            <Parameter Name="Username" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="orderDetail_KTCTDonHang" ReturnType="Collection(Int32)">
+            <Parameter Name="OrderID" Mode="In" Type="Int32" />
+            <Parameter Name="ProductID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="orderDetail_LayCTDonHang" ReturnType="Collection(LaptopPCSaleModel.orderDetail_LayCTDonHang_Result)">
+            <Parameter Name="OrderID" Mode="In" Type="Int32" />
+            <Parameter Name="ProductID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="LayDSDonHang" ReturnType="Collection(LaptopPCSaleModel.LayDSDonHang_Result)" />
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -423,6 +454,26 @@
           <Property Type="Int32" Name="ID" Nullable="false" />
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <ComplexType Name="orderDetail_LayCTDonHang_Result">
+          <Property Type="Int32" Name="OrderID" Nullable="false" />
+          <Property Type="Int32" Name="ProductID" Nullable="false" />
+          <Property Type="Decimal" Name="UnitPrice" Nullable="false" Precision="19" />
+          <Property Type="Int16" Name="Quantity" Nullable="false" />
+          <Property Type="Single" Name="Discount" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="LayDSDonHang_Result">
+          <Property Type="Int32" Name="OrderID" Nullable="false" />
+          <Property Type="String" Name="FirstName" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="LastName" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="CompanyName" Nullable="false" MaxLength="40" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -512,6 +563,26 @@
                 </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="LaptopPCSaleModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="user_KTDangNhap" FunctionName="LaptopPCSaleModel.Store.user_KTDangNhap" />
+          <FunctionImportMapping FunctionImportName="orderDetail_KTCTDonHang" FunctionName="LaptopPCSaleModel.Store.orderDetail_KTCTDonHang" />
+          <FunctionImportMapping FunctionImportName="LayDSDonHang" FunctionName="LaptopPCSaleModel.Store.LayDSDonHang">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LaptopPCSaleModel.LayDSDonHang_Result">
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

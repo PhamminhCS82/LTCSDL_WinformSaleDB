@@ -8,9 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-
 namespace BTN_LTCSDL.Properties
 {
+    using System;
+
+
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -18,7 +20,7 @@ namespace BTN_LTCSDL.Properties
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources
@@ -41,7 +43,7 @@ namespace BTN_LTCSDL.Properties
         {
             get
             {
-                if ((resourceMan == null))
+                if (object.ReferenceEquals(resourceMan, null))
                 {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("BTN_LTCSDL.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
@@ -64,6 +66,30 @@ namespace BTN_LTCSDL.Properties
             set
             {
                 resourceCulture = value;
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Profile
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("Profile", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Unlock
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("Unlock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

@@ -18,6 +18,7 @@ namespace BTN_LTCSDL
         BUS_SanPham busSanPham;
         bool flag = false;
         private Product p;
+        private int slConLai = 0;
         public FCTDonHang()
         {
             InitializeComponent();
@@ -47,7 +48,7 @@ namespace BTN_LTCSDL
                 else
                     MessageBox.Show("Thêm thất bại mời kiểm tra lại");
                 layDSChiTietDH(maDH);
-                //MessageBox.Show(txtDonGia.Text);
+                txtSoLuongConLai.Text = p.UnitsInStock.ToString();
             }
             else
             {
@@ -57,12 +58,32 @@ namespace BTN_LTCSDL
 
         private void btXoa_Click(object sender, EventArgs e)
         {
-
+            OrderDetail orderDetail = new OrderDetail();
+            orderDetail.OrderID = maDH;
+            orderDetail.ProductID = Int32.Parse(cbSanPham.SelectedValue.ToString());
+            if (bDH.XoaCTDonHang(orderDetail))
+            {
+                MessageBox.Show("Xóa thành công");
+                layDSChiTietDH(maDH);
+            }
+            else
+                MessageBox.Show("Xóa thất bại");
         }
 
         private void btSua_Click(object sender, EventArgs e)
         {
-
+            OrderDetail orderDetail = new OrderDetail();
+            orderDetail.OrderID = maDH;
+            orderDetail.ProductID = Int32.Parse(cbSanPham.SelectedValue.ToString());
+            orderDetail.Quantity = (short)numericUpDownSLSP.Value;
+            orderDetail.UnitPrice = decimal.Parse(txtDonGia.Text);
+            if (bDH.SuaCTDonHang(orderDetail) && orderDetail.Quantity > 0)
+            {
+                MessageBox.Show("Sửa thành công");
+                layDSChiTietDH(maDH);
+            }
+            else
+                MessageBox.Show("Sửa thất bại");
         }
 
         private void btThoat_Click(object sender, EventArgs e)
@@ -75,7 +96,6 @@ namespace BTN_LTCSDL
             busSanPham = new BUS_SanPham();
             layDSChiTietDH(maDH);
             busSanPham.HienThiDSSanPham(cbSanPham);
-            p = busSanPham.LaySP(maDH);
             txtMaDH.Text = maDH.ToString();
             flag = true;
         }
@@ -99,19 +119,16 @@ namespace BTN_LTCSDL
                 p = busSanPham.LaySP(Convert.ToInt32(cbSanPham.SelectedValue));
                 txtDonGia.Text = (p.UnitPrice * numericUpDownSLSP.Value).ToString();
                 txtSoLuongConLai.Text = p.UnitsInStock.ToString();
+                slConLai = (int)p.UnitsInStock;
             }
         }
 
         private void numericUpDownSLSP_ValueChanged(object sender, EventArgs e)
         {
-            if(flag)
+            if (numericUpDownSLSP.Value >= slConLai)
+                numericUpDownSLSP.Value = slConLai;
+            if (flag)
             {
-                short? slConLai;
-                if (p.UnitsInStock != null)
-                    slConLai = p.UnitsInStock;
-                else
-                    slConLai = 0;
-                numericUpDownSLSP.Maximum = Convert.ToInt32(slConLai);
                 p = busSanPham.LaySP(Convert.ToInt32(cbSanPham.SelectedValue));
                 txtDonGia.Text = (p.UnitPrice * numericUpDownSLSP.Value).ToString();
                 txtSoLuongConLai.Text = p.UnitsInStock.ToString();

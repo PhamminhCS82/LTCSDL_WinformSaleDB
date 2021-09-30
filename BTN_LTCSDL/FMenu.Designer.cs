@@ -76,6 +76,7 @@ namespace BTN_LTCSDL
             this.qlKHToolStripMenuItem.Name = "qlKHToolStripMenuItem";
             this.qlKHToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
             this.qlKHToolStripMenuItem.Text = "Quản lý khách hàng";
+            this.qlKHToolStripMenuItem.Click += new System.EventHandler(this.qlKHToolStripMenuItem_Click);
             // 
             // FMenu
             // 

@@ -33,17 +33,27 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,6 +66,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\BUS_DonHang.cs" />
+    <Compile Include="BUS\BUS_KhachHang.cs" />
+    <Compile Include="BUS\BUS_QuanLy.cs" />
     <Compile Include="BUS\BUS_SanPham.cs" />
     <Compile Include="Category.cs">
       <DependentUpon>SaleLapDBModel.tt</DependentUpon>
@@ -64,6 +76,8 @@
       <DependentUpon>SaleLapDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DAO\DAO_DonHang.cs" />
+    <Compile Include="DAO\DAO_KhachHang.cs" />
+    <Compile Include="DAO\DAO_QuanLy.cs" />
     <Compile Include="DAO\DAO_SanPham.cs" />
     <Compile Include="Employee.cs">
       <DependentUpon>SaleLapDBModel.tt</DependentUpon>
@@ -74,11 +88,23 @@
     <Compile Include="FCTDonHang.Designer.cs">
       <DependentUpon>FCTDonHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="FDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FDangNhap.Designer.cs">
+      <DependentUpon>FDangNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="FDonHang.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FDonHang.Designer.cs">
       <DependentUpon>FDonHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FKhachHang.Designer.cs">
+      <DependentUpon>FKhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="FMenu.cs">
       <SubType>Form</SubType>
@@ -86,11 +112,20 @@
     <Compile Include="FMenu.Designer.cs">
       <DependentUpon>FMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FReport.Designer.cs">
+      <DependentUpon>FReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="FSanPham.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FSanPham.Designer.cs">
       <DependentUpon>FSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LayDSDonHang_Result.cs">
+      <DependentUpon>SaleLapDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Order.cs">
       <DependentUpon>SaleLapDBModel.tt</DependentUpon>
@@ -98,11 +133,20 @@
     <Compile Include="OrderDetail.cs">
       <DependentUpon>SaleLapDBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="orderDetail_LayCTDonHang_Result.cs">
+      <DependentUpon>SaleLapDBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Product.cs">
       <DependentUpon>SaleLapDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\ReportDH.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportDH.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="SaleLapDBModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -124,17 +168,30 @@
     <Compile Include="sp_helpdiagrams_Result.cs">
       <DependentUpon>SaleLapDBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Supplier.cs">
+      <DependentUpon>SaleLapDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
       <DependentUpon>SaleLapDBModel.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FCTDonHang.resx">
       <DependentUpon>FCTDonHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FDangNhap.resx">
+      <DependentUpon>FDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FDonHang.resx">
       <DependentUpon>FDonHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FKhachHang.resx">
+      <DependentUpon>FKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FMenu.resx">
       <DependentUpon>FMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FReport.resx">
+      <DependentUpon>FReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FSanPham.resx">
       <DependentUpon>FSanPham.cs</DependentUpon>
@@ -147,7 +204,12 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Report\ReportDH.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportDH.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -171,9 +233,25 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\Profile.png" />
+    <None Include="Resources\Unlock.png" />
     <Content Include="SaleLapDBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>SaleLapDBModel.Context.cs</LastGenOutput>
