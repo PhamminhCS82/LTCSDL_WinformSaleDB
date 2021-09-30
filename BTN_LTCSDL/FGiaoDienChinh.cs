@@ -12,6 +12,8 @@ namespace BTN_LTCSDL
 {
     public partial class FGiaoDienChinh : Form
     {
+        public string tenTaiKhoan;
+
         public FGiaoDienChinh()
         {
             InitializeComponent();
@@ -45,6 +47,7 @@ namespace BTN_LTCSDL
         private void btNhanVien_Click(object sender, EventArgs e)
         {
             CloseChildForm();
+            OpenChildForm(new FNhanVien());
             
         }
 
@@ -52,6 +55,12 @@ namespace BTN_LTCSDL
         {
             CloseChildForm();
             OpenChildForm(new FKhachHang());
+        }
+
+        private void FGiaoDienChinh_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn thoát chương trình?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.No)
+                e.Cancel = true;
         }
     }
 }

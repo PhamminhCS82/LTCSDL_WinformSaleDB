@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="BUS\BUS_DonHang.cs" />
     <Compile Include="BUS\BUS_KhachHang.cs" />
+    <Compile Include="BUS\BUS_NhanVien.cs" />
     <Compile Include="BUS\BUS_SanPham.cs" />
     <Compile Include="Category.cs">
       <DependentUpon>SaleLapDBModel.tt</DependentUpon>
@@ -66,6 +67,7 @@
     </Compile>
     <Compile Include="DAO\DAO_DonHang.cs" />
     <Compile Include="DAO\DAO_KhachHang.cs" />
+    <Compile Include="DAO\DAO_NhanVien.cs" />
     <Compile Include="DAO\DAO_SanPham.cs" />
     <Compile Include="Employee.cs">
       <DependentUpon>SaleLapDBModel.tt</DependentUpon>
@@ -81,12 +83,6 @@
     </Compile>
     <Compile Include="FDangNhap.Designer.cs">
       <DependentUpon>FDangNhap.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FMenu.Designer.cs">
-      <DependentUpon>FMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="FDonHang.cs">
       <SubType>Form</SubType>
@@ -105,6 +101,12 @@
     </Compile>
     <Compile Include="FGiaoDienChinh.Designer.cs">
       <DependentUpon>FGiaoDienChinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FNhanVien.Designer.cs">
+      <DependentUpon>FNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="FSanPham.cs">
       <SubType>Form</SubType>
@@ -153,11 +155,11 @@
     <EmbeddedResource Include="FKhachHang.resx">
       <DependentUpon>FKhachHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FMenu.resx">
-      <DependentUpon>FMenu.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FGiaoDienChinh.resx">
       <DependentUpon>FGiaoDienChinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FNhanVien.resx">
+      <DependentUpon>FNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FSanPham.resx">
       <DependentUpon>FSanPham.cs</DependentUpon>

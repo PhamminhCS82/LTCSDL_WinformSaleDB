@@ -120,6 +120,11 @@ namespace BTN_LTCSDL
                     if (busSanPham.XoaSanPham(sanPham))
                     {
                         CapNhat();
+                        txtDonGia.Text = "";
+                        txtMaSanPham.Text = "";
+                        txtTenSanPham.Text = "";
+                        cbLoaiSanPham.Text = "";
+                        cbNhaCungCap.Text = "";
                         MessageBox.Show("Xóa sản phẩm thành công", "Thông báo");
                     }
                     else

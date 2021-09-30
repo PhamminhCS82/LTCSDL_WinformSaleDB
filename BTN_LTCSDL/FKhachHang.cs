@@ -84,25 +84,30 @@ namespace BTN_LTCSDL
         }
 
         private void btXoa_Click(object sender, EventArgs e)
-        { 
-            if (MessageBox.Show("Bạn có muốn xóa khách hàng này?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+        {
+            if (txtMaKhachHang.Text == "")
+                MessageBox.Show("Vui lòng chọn khách hàng cần xóa", "Thông báo");
+            else
             {
-                Customer khachHang = new Customer();
-                khachHang.CustomerID = int.Parse(dtgvKhachHang.CurrentRow.Cells["CustomerID"].Value.ToString());
-                if (busKhachHang.XoaKhachHang(khachHang))
+                if (MessageBox.Show("Bạn có muốn xóa khách hàng này?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    CapNhat();
+                    Customer khachHang = new Customer();
+                    khachHang.CustomerID = int.Parse(dtgvKhachHang.CurrentRow.Cells["CustomerID"].Value.ToString());
+                    if (busKhachHang.XoaKhachHang(khachHang))
+                    {
+                        CapNhat();
 
-                    //Clear các giá trị trên Textbox
-                    txtDiaChi.Text = "";
-                    txtMaKhachHang.Text = "";
-                    txtSoDienThoai.Text = "";
-                    txtTenCongTy.Text = "";
-                    txtTenKhachHang.Text = "";
-                    MessageBox.Show("Xóa khách hàng thành công", "Thông báo");
+                        //Clear các giá trị trên Textbox
+                        txtDiaChi.Text = "";
+                        txtMaKhachHang.Text = "";
+                        txtSoDienThoai.Text = "";
+                        txtTenCongTy.Text = "";
+                        txtTenKhachHang.Text = "";
+                        MessageBox.Show("Xóa khách hàng thành công", "Thông báo");
+                    }
+                    else
+                        MessageBox.Show("Đã xảy ra lỗi khi xóa khách hàng", "Thông báo");
                 }
-                else
-                    MessageBox.Show("Đã xảy ra lỗi khi xóa khách hàng", "Thông báo");
             }
         }
 

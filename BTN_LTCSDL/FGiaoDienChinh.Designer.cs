@@ -46,9 +46,11 @@ namespace BTN_LTCSDL
             // 
             // panelNavbar
             // 
-            this.panelNavbar.Location = new System.Drawing.Point(193, 12);
+            this.panelNavbar.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.panelNavbar.Location = new System.Drawing.Point(185, 12);
+            this.panelNavbar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelNavbar.Name = "panelNavbar";
-            this.panelNavbar.Size = new System.Drawing.Size(878, 55);
+            this.panelNavbar.Size = new System.Drawing.Size(885, 55);
             this.panelNavbar.TabIndex = 2;
             // 
             // label1
@@ -63,9 +65,10 @@ namespace BTN_LTCSDL
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(193, 72);
+            this.panel1.Location = new System.Drawing.Point(193, 71);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(878, 665);
+            this.panel1.Size = new System.Drawing.Size(877, 665);
             this.panel1.TabIndex = 3;
             // 
             // btSanPham
@@ -76,7 +79,8 @@ namespace BTN_LTCSDL
             this.btSanPham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSanPham.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSanPham.ForeColor = System.Drawing.Color.White;
-            this.btSanPham.Location = new System.Drawing.Point(3, 3);
+            this.btSanPham.Location = new System.Drawing.Point(3, 2);
+            this.btSanPham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btSanPham.Name = "btSanPham";
             this.btSanPham.Size = new System.Drawing.Size(169, 54);
             this.btSanPham.TabIndex = 4;
@@ -92,6 +96,7 @@ namespace BTN_LTCSDL
             this.panel2.Controls.Add(this.btNhanVien);
             this.panel2.Controls.Add(this.btSanPham);
             this.panel2.Location = new System.Drawing.Point(12, 181);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(175, 556);
             this.panel2.TabIndex = 4;
@@ -105,6 +110,7 @@ namespace BTN_LTCSDL
             this.btKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btKhachHang.ForeColor = System.Drawing.Color.White;
             this.btKhachHang.Location = new System.Drawing.Point(3, 63);
+            this.btKhachHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btKhachHang.Name = "btKhachHang";
             this.btKhachHang.Size = new System.Drawing.Size(169, 54);
             this.btKhachHang.TabIndex = 8;
@@ -121,6 +127,7 @@ namespace BTN_LTCSDL
             this.btDonHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btDonHang.ForeColor = System.Drawing.Color.White;
             this.btDonHang.Location = new System.Drawing.Point(3, 123);
+            this.btDonHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btDonHang.Name = "btDonHang";
             this.btDonHang.Size = new System.Drawing.Size(169, 54);
             this.btDonHang.TabIndex = 7;
@@ -137,6 +144,7 @@ namespace BTN_LTCSDL
             this.btNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btNhanVien.ForeColor = System.Drawing.Color.White;
             this.btNhanVien.Location = new System.Drawing.Point(3, 183);
+            this.btNhanVien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btNhanVien.Name = "btNhanVien";
             this.btNhanVien.Size = new System.Drawing.Size(169, 54);
             this.btNhanVien.TabIndex = 6;
@@ -150,6 +158,7 @@ namespace BTN_LTCSDL
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Location = new System.Drawing.Point(12, 12);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(175, 169);
             this.panel3.TabIndex = 5;
@@ -157,7 +166,8 @@ namespace BTN_LTCSDL
             // pictureBox1
             // 
             this.pictureBox1.Image = global::BTN_LTCSDL.Properties.Resources.Profile;
-            this.pictureBox1.Location = new System.Drawing.Point(38, 50);
+            this.pictureBox1.Location = new System.Drawing.Point(37, 50);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(95, 95);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -168,16 +178,18 @@ namespace BTN_LTCSDL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1084, 749);
+            this.ClientSize = new System.Drawing.Size(1084, 750);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelNavbar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "FGiaoDienChinh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Giao diện chính";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FGiaoDienChinh_FormClosing);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
