@@ -30,6 +30,7 @@ namespace BTN_LTCSDL
         private void InitializeComponent()
         {
             this.panelNavbar = new System.Windows.Forms.Panel();
+            this.btDangXuat = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btSanPham = new System.Windows.Forms.Button();
@@ -39,6 +40,7 @@ namespace BTN_LTCSDL
             this.btNhanVien = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelNavbar.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -47,11 +49,28 @@ namespace BTN_LTCSDL
             // panelNavbar
             // 
             this.panelNavbar.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.panelNavbar.Controls.Add(this.btDangXuat);
             this.panelNavbar.Location = new System.Drawing.Point(185, 12);
             this.panelNavbar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelNavbar.Name = "panelNavbar";
             this.panelNavbar.Size = new System.Drawing.Size(885, 55);
             this.panelNavbar.TabIndex = 2;
+            // 
+            // btDangXuat
+            // 
+            this.btDangXuat.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btDangXuat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btDangXuat.FlatAppearance.BorderSize = 0;
+            this.btDangXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btDangXuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDangXuat.ForeColor = System.Drawing.Color.White;
+            this.btDangXuat.Location = new System.Drawing.Point(724, 9);
+            this.btDangXuat.Name = "btDangXuat";
+            this.btDangXuat.Size = new System.Drawing.Size(85, 34);
+            this.btDangXuat.TabIndex = 0;
+            this.btDangXuat.Text = "Đăng xuất";
+            this.btDangXuat.UseVisualStyleBackColor = false;
+            this.btDangXuat.Click += new System.EventHandler(this.btDangXuat_Click);
             // 
             // label1
             // 
@@ -190,6 +209,7 @@ namespace BTN_LTCSDL
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Giao diện chính";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FGiaoDienChinh_FormClosing);
+            this.panelNavbar.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -209,6 +229,7 @@ namespace BTN_LTCSDL
         private System.Windows.Forms.Button btKhachHang;
         private System.Windows.Forms.Button btDonHang;
         private System.Windows.Forms.Button btNhanVien;
+        private System.Windows.Forms.Button btDangXuat;
     }
 }
 

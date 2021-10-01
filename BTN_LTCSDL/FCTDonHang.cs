@@ -20,11 +20,14 @@ namespace BTN_LTCSDL
         bool flag = false;
         private Product p;
         private int slConLai = 0;
+
         public FCTDonHang()
         {
             InitializeComponent();
             bDH = new BUS_DonHang();
+            busSanPham = new BUS_SanPham();
         }
+
         private void layDSChiTietDH(int ma)
         {
             gVCTDH.DataSource = null;
@@ -49,11 +52,14 @@ namespace BTN_LTCSDL
                 orderDetail.Quantity = (short)numericUpDownSLSP.Value;
                 orderDetail.UnitPrice = decimal.Parse(txtDonGia.Text);
                 if (bDH.ThemCTDH(orderDetail))
+                {
+                    layDSChiTietDH(maDH);
+                    p = busSanPham.LaySP(int.Parse(cbSanPham.SelectedValue.ToString()));
+                    txtSoLuongConLai.Text = p.UnitsInStock.ToString();
                     MessageBox.Show("Thêm Thành công", "Thông báo");
+                }
                 else
                     MessageBox.Show("Thêm thất bại mời kiểm tra lại", "Thông báo");
-                layDSChiTietDH(maDH);
-                txtSoLuongConLai.Text = p.UnitsInStock.ToString();
             }
         }
 
@@ -104,13 +110,12 @@ namespace BTN_LTCSDL
 
         private void FCTDonHang_Load(object sender, EventArgs e)
         {
-            busSanPham = new BUS_SanPham();
             layDSChiTietDH(maDH);
             busSanPham.HienThiDSSanPham(cbSanPham);
             txtMaDH.Text = maDH.ToString();
             flag = true;
             gVCTDH.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            txtSoLuongConLai.Enabled = false;
+            txtSoLuongConLai.Enabled = false;         
         }
 
         private void gVCTDH_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -145,7 +150,6 @@ namespace BTN_LTCSDL
                 p = busSanPham.LaySP(Convert.ToInt32(cbSanPham.SelectedValue));
                 txtDonGia.Text = (p.UnitPrice * numericUpDownSLSP.Value).ToString();
                 txtSoLuongConLai.Text = p.UnitsInStock.ToString();
-                
             }
         }
 

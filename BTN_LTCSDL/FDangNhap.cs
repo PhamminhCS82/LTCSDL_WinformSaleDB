@@ -26,7 +26,7 @@ namespace BTN_LTCSDL
                 f.Show();
             }
             else
-                MessageBox.Show("Đăng nhập thất bại");
+                MessageBox.Show("Đăng nhập thất bại", "Thông báo");
         }
 
         protected override bool ProcessDialogKey(Keys keyData)

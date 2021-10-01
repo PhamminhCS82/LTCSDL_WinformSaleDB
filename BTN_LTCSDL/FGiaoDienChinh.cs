@@ -57,9 +57,19 @@ namespace BTN_LTCSDL
             OpenChildForm(new FKhachHang());
         }
 
+        private void btDangXuat_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn đăng xuất", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                FDangNhap dangNhap = new FDangNhap();
+                this.Hide();
+                dangNhap.ShowDialog();
+            }
+        }
+
         private void FGiaoDienChinh_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Bạn có muốn thoát chương trình?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.No)
+            if (MessageBox.Show("Bạn có muốn đăng xuất", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.No)
                 e.Cancel = true;
         }
     }
