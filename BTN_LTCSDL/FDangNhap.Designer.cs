@@ -52,7 +52,7 @@ namespace BTN_LTCSDL
             // 
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(16, 15);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(400, 476);
             this.panel1.TabIndex = 0;
@@ -61,7 +61,7 @@ namespace BTN_LTCSDL
             // 
             this.pictureBox1.Image = global::BTN_LTCSDL.Properties.Resources.Unlock;
             this.pictureBox1.Location = new System.Drawing.Point(4, 4);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(392, 469);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -75,7 +75,7 @@ namespace BTN_LTCSDL
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(448, 155);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(368, 158);
             this.panel2.TabIndex = 2;
@@ -84,19 +84,19 @@ namespace BTN_LTCSDL
             // 
             this.txtTenDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenDangNhap.Location = new System.Drawing.Point(8, 34);
-            this.txtTenDangNhap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTenDangNhap.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenDangNhap.Name = "txtTenDangNhap";
             this.txtTenDangNhap.Size = new System.Drawing.Size(355, 29);
-            this.txtTenDangNhap.TabIndex = 4;
+            this.txtTenDangNhap.TabIndex = 1;
             // 
             // txtMatKhau
             // 
             this.txtMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMatKhau.Location = new System.Drawing.Point(8, 102);
-            this.txtMatKhau.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMatKhau.Margin = new System.Windows.Forms.Padding(4);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Size = new System.Drawing.Size(355, 29);
-            this.txtMatKhau.TabIndex = 3;
+            this.txtMatKhau.TabIndex = 2;
             this.txtMatKhau.UseSystemPasswordChar = true;
             // 
             // label2
@@ -126,7 +126,7 @@ namespace BTN_LTCSDL
             this.btDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btDangNhap.ForeColor = System.Drawing.Color.White;
             this.btDangNhap.Location = new System.Drawing.Point(500, 383);
-            this.btDangNhap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btDangNhap.Margin = new System.Windows.Forms.Padding(4);
             this.btDangNhap.Name = "btDangNhap";
             this.btDangNhap.Size = new System.Drawing.Size(276, 62);
             this.btDangNhap.TabIndex = 3;
@@ -141,7 +141,7 @@ namespace BTN_LTCSDL
             this.panel3.Controls.Add(this.linkLabel1);
             this.panel3.Controls.Add(this.cbHienMatKhau);
             this.panel3.Location = new System.Drawing.Point(448, 320);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(368, 31);
             this.panel3.TabIndex = 4;
@@ -163,7 +163,7 @@ namespace BTN_LTCSDL
             // 
             this.cbHienMatKhau.AutoSize = true;
             this.cbHienMatKhau.Location = new System.Drawing.Point(4, 4);
-            this.cbHienMatKhau.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbHienMatKhau.Margin = new System.Windows.Forms.Padding(4);
             this.cbHienMatKhau.Name = "cbHienMatKhau";
             this.cbHienMatKhau.Size = new System.Drawing.Size(121, 21);
             this.cbHienMatKhau.TabIndex = 1;
@@ -175,7 +175,7 @@ namespace BTN_LTCSDL
             // 
             this.pictureBox2.Image = global::BTN_LTCSDL.Properties.Resources.Profile;
             this.pictureBox2.Location = new System.Drawing.Point(584, 43);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(93, 86);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -194,7 +194,7 @@ namespace BTN_LTCSDL
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";

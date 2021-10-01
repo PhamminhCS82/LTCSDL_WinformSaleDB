@@ -37,7 +37,11 @@ namespace BTN_LTCSDL
 
         private void btThem_Click(object sender, EventArgs e)
         {
-            if(numericUpDownSLSP.Value > 0) 
+            if (txtMaDH.Text == "" || txtDonGia.Text == "" || cbSanPham.Text == "")
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo");
+            else if (numericUpDownSLSP.Value <= 0)
+                MessageBox.Show("Số lượng sản phẩm phải lớn hơn 0", "Thông báo");
+            else
             {
                 OrderDetail orderDetail = new OrderDetail();
                 orderDetail.OrderID = maDH;
@@ -45,46 +49,52 @@ namespace BTN_LTCSDL
                 orderDetail.Quantity = (short)numericUpDownSLSP.Value;
                 orderDetail.UnitPrice = decimal.Parse(txtDonGia.Text);
                 if (bDH.ThemCTDH(orderDetail))
-                    MessageBox.Show("Thêm Thành công");
+                    MessageBox.Show("Thêm Thành công", "Thông báo");
                 else
-                    MessageBox.Show("Thêm thất bại mời kiểm tra lại");
+                    MessageBox.Show("Thêm thất bại mời kiểm tra lại", "Thông báo");
                 layDSChiTietDH(maDH);
                 txtSoLuongConLai.Text = p.UnitsInStock.ToString();
-            }
-            else
-            {
-                MessageBox.Show("Hết hàng");
             }
         }
 
         private void btXoa_Click(object sender, EventArgs e)
         {
-            OrderDetail orderDetail = new OrderDetail();
-            orderDetail.OrderID = maDH;
-            orderDetail.ProductID = Int32.Parse(cbSanPham.SelectedValue.ToString());
-            if (bDH.XoaCTDonHang(orderDetail))
+            if (MessageBox.Show("Bạn có muốn xóa chi tiết đơn hàng này", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                MessageBox.Show("Xóa thành công");
-                layDSChiTietDH(maDH);
+                OrderDetail orderDetail = new OrderDetail();
+                orderDetail.OrderID = maDH;
+                orderDetail.ProductID = Int32.Parse(cbSanPham.SelectedValue.ToString());
+                if (bDH.XoaCTDonHang(orderDetail))
+                {
+                    MessageBox.Show("Xóa thành công", "Thông báo");
+                    layDSChiTietDH(maDH);
+                }
+                else
+                    MessageBox.Show("Xóa thất bại", "Thông báo");
             }
-            else
-                MessageBox.Show("Xóa thất bại");
         }
 
         private void btSua_Click(object sender, EventArgs e)
         {
-            OrderDetail orderDetail = new OrderDetail();
-            orderDetail.OrderID = maDH;
-            orderDetail.ProductID = Int32.Parse(cbSanPham.SelectedValue.ToString());
-            orderDetail.Quantity = (short)numericUpDownSLSP.Value;
-            orderDetail.UnitPrice = decimal.Parse(txtDonGia.Text);
-            if (bDH.SuaCTDonHang(orderDetail) && orderDetail.Quantity > 0)
-            {
-                MessageBox.Show("Sửa thành công");
-                layDSChiTietDH(maDH);
-            }
+            if (txtMaDH.Text == "" || txtDonGia.Text == "" || cbSanPham.Text == "")
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo");
+            else if (numericUpDownSLSP.Value <= 0)
+                MessageBox.Show("Số lượng sản phẩm phải lớn hơn 0", "Thông báo");
             else
-                MessageBox.Show("Sửa thất bại");
+            {
+                OrderDetail orderDetail = new OrderDetail();
+                orderDetail.OrderID = maDH;
+                orderDetail.ProductID = Int32.Parse(cbSanPham.SelectedValue.ToString());
+                orderDetail.Quantity = (short)numericUpDownSLSP.Value;
+                orderDetail.UnitPrice = decimal.Parse(txtDonGia.Text);
+                if (bDH.SuaCTDonHang(orderDetail) && orderDetail.Quantity > 0)
+                {
+                    MessageBox.Show("Sửa thành công", "Thông báo");
+                    layDSChiTietDH(maDH);
+                }
+                else
+                    MessageBox.Show("Sửa thất bại", "Thông báo");
+            }
         }
 
         private void btThoat_Click(object sender, EventArgs e)
@@ -99,6 +109,8 @@ namespace BTN_LTCSDL
             busSanPham.HienThiDSSanPham(cbSanPham);
             txtMaDH.Text = maDH.ToString();
             flag = true;
+            gVCTDH.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            txtSoLuongConLai.Enabled = false;
         }
 
         private void gVCTDH_CellClick(object sender, DataGridViewCellEventArgs e)

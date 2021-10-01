@@ -348,6 +348,7 @@ namespace BTN_LTCSDL
             this.gVCTDH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gVCTDH.Location = new System.Drawing.Point(12, 22);
             this.gVCTDH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gVCTDH.MultiSelect = false;
             this.gVCTDH.Name = "gVCTDH";
             this.gVCTDH.RowHeadersWidth = 62;
             this.gVCTDH.RowTemplate.Height = 28;
@@ -389,7 +390,7 @@ namespace BTN_LTCSDL
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FCTDonHang";
-            this.Text = "FOrderDetails";
+            this.Text = "Chi tiết đơn hàng";
             this.Load += new System.EventHandler(this.FCTDonHang_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

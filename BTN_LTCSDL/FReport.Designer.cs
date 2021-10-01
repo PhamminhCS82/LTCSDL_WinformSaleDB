@@ -40,16 +40,16 @@ namespace BTN_LTCSDL
             this.FReportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FReportViewer.Location = new System.Drawing.Point(0, 0);
             this.FReportViewer.Name = "FReportViewer";
-            this.FReportViewer.Size = new System.Drawing.Size(800, 450);
+            this.FReportViewer.Size = new System.Drawing.Size(1226, 653);
             this.FReportViewer.TabIndex = 0;
             // 
-            // FReportDH
+            // FReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1226, 653);
             this.Controls.Add(this.FReportViewer);
-            this.Name = "FReportDH";
+            this.Name = "FReport";
             this.Text = "FReport";
             this.ResumeLayout(false);
 

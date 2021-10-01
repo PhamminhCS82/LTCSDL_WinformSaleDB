@@ -85,5 +85,10 @@ namespace BTN_LTCSDL.BUS
         {
             return daoSanPham.LaySP(maSP);
         }
+
+        public List<Product> HienThiDSSanPhamReport()
+        {
+            return daoSanPham.LayDSSanPhamReport();
+        }
     }
 }

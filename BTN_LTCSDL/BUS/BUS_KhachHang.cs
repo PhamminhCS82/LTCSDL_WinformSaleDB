@@ -63,5 +63,10 @@ namespace BTN_LTCSDL.BUS
                 return false;
             }
         }
+
+        public List<Customer> HienThiDSKhachHangReport()
+        {
+            return daoKhachHang.LayDSKhachHangReport();
+        }
     }
 }

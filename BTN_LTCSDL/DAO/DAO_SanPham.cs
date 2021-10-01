@@ -24,7 +24,8 @@ namespace BTN_LTCSDL.DAO
                 p.UnitPrice,
                 p.UnitsInStock,
                 p.Category.CategoryName,
-                p.Supplier.CompanyName
+                p.Supplier.CompanyName,
+                p.UnitsOnOrder
             }).ToList();
             return query;
         }
@@ -80,6 +81,7 @@ namespace BTN_LTCSDL.DAO
                 product.UnitsInStock = sanPham.UnitsInStock;
                 product.CategoryID = sanPham.CategoryID;
                 product.SupplierID = sanPham.SupplierID;
+                product.UnitsOnOrder = sanPham.UnitsOnOrder;
                 db.SaveChanges();
                 return true;
             }
@@ -93,6 +95,12 @@ namespace BTN_LTCSDL.DAO
             Product product = db.Products.
                 Where(p => p.ProductID == maSP).First();
             return product;
+        }
+
+        public List<Product> LayDSSanPhamReport()
+        {
+            var danhSach = db.Products.Select(s => s).ToList();
+            return danhSach;
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BTN_LTCSDL.BUS;
+using BTN_LTCSDL.Report;
 
 namespace BTN_LTCSDL
 {
@@ -53,6 +54,7 @@ namespace BTN_LTCSDL
                 numSoLuong.Value = decimal.Parse(dtgvSanPham.Rows[e.RowIndex].Cells["UnitsInStock"].Value.ToString());
                 cbLoaiSanPham.Text = dtgvSanPham.Rows[e.RowIndex].Cells["CategoryName"].Value.ToString();
                 cbNhaCungCap.Text = dtgvSanPham.Rows[e.RowIndex].Cells["CompanyName"].Value.ToString();
+                numDatHang.Text = dtgvSanPham.Rows[e.RowIndex].Cells["UnitsOnOrder"].Value.ToString();
             }
         }
 
@@ -97,6 +99,7 @@ namespace BTN_LTCSDL
                 sanPham.UnitsInStock = short.Parse(numSoLuong.Value.ToString());
                 sanPham.SupplierID = short.Parse(cbNhaCungCap.SelectedValue.ToString());
                 sanPham.CategoryID = int.Parse(cbLoaiSanPham.SelectedValue.ToString());
+                sanPham.UnitsOnOrder = short.Parse(numDatHang.Value.ToString());
                 if (busSanPham.SuaSanPham(sanPham))
                 {
                     CapNhat();
@@ -116,7 +119,7 @@ namespace BTN_LTCSDL
                 if(MessageBox.Show("Bạn có muốn xóa sản phẩm đã chọn", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     Product sanPham = new Product();
-                    sanPham.ProductID = int.Parse(dtgvSanPham.CurrentRow.Cells["ProductID"].Value.ToString());
+                    sanPham.ProductID = int.Parse(txtMaSanPham.Text);
                     if (busSanPham.XoaSanPham(sanPham))
                     {
                         CapNhat();
@@ -128,9 +131,13 @@ namespace BTN_LTCSDL
             }    
         }
 
-        private void btDong_Click(object sender, EventArgs e)
+        private void btReport_Click(object sender, EventArgs e)
         {
-            this.Close();
+            FReport report = new FReport();
+            ReportSP sanPham = new ReportSP();
+            sanPham.SetDataSource(busSanPham.HienThiDSSanPhamReport().ToList());
+            report.FReportViewer.ReportSource = sanPham;
+            report.Show();
         }
     }
 }

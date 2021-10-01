@@ -24,6 +24,7 @@ namespace BTN_LTCSDL.DAO
                 p.CompanyName,
                 p.Phone,
                 p.Address,
+                p.City
             }).ToList();
             return query;
         }
@@ -65,11 +66,18 @@ namespace BTN_LTCSDL.DAO
                 customer.ContactName = khachHang.ContactName;
                 customer.Address = khachHang.Address;
                 customer.Phone = khachHang.Phone;
+                customer.City = khachHang.City;
                 db.SaveChanges();
                 return true;
             }
             else
                 return false;
+        }
+
+        public List<Customer> LayDSKhachHangReport()
+        {
+            var danhSach = db.Customers.Select(s => s).ToList();
+            return danhSach;
         }
     }
 }

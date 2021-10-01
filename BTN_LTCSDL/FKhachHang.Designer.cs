@@ -42,11 +42,13 @@ namespace BTN_LTCSDL
             this.txtMaKhachHang = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btDong = new System.Windows.Forms.Button();
+            this.btReport = new System.Windows.Forms.Button();
             this.btXoa = new System.Windows.Forms.Button();
             this.btSua = new System.Windows.Forms.Button();
             this.btThem = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.txtThanhPho = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvKhachHang)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -56,15 +58,18 @@ namespace BTN_LTCSDL
             // 
             this.dtgvKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvKhachHang.Location = new System.Drawing.Point(12, 378);
+            this.dtgvKhachHang.MultiSelect = false;
             this.dtgvKhachHang.Name = "dtgvKhachHang";
             this.dtgvKhachHang.RowHeadersWidth = 51;
             this.dtgvKhachHang.RowTemplate.Height = 24;
-            this.dtgvKhachHang.Size = new System.Drawing.Size(864, 275);
+            this.dtgvKhachHang.Size = new System.Drawing.Size(853, 275);
             this.dtgvKhachHang.TabIndex = 0;
             this.dtgvKhachHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvKhachHang_CellClick);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.txtThanhPho);
             this.groupBox1.Controls.Add(this.txtDiaChi);
             this.groupBox1.Controls.Add(this.txtTenCongTy);
             this.groupBox1.Controls.Add(this.label6);
@@ -93,7 +98,7 @@ namespace BTN_LTCSDL
             // 
             this.txtTenCongTy.Location = new System.Drawing.Point(367, 55);
             this.txtTenCongTy.Name = "txtTenCongTy";
-            this.txtTenCongTy.Size = new System.Drawing.Size(241, 22);
+            this.txtTenCongTy.Size = new System.Drawing.Size(213, 22);
             this.txtTenCongTy.TabIndex = 13;
             // 
             // label6
@@ -107,7 +112,7 @@ namespace BTN_LTCSDL
             // 
             // txtSoDienThoai
             // 
-            this.txtSoDienThoai.Location = new System.Drawing.Point(717, 79);
+            this.txtSoDienThoai.Location = new System.Drawing.Point(717, 106);
             this.txtSoDienThoai.Name = "txtSoDienThoai";
             this.txtSoDienThoai.Size = new System.Drawing.Size(124, 22);
             this.txtSoDienThoai.TabIndex = 7;
@@ -116,7 +121,7 @@ namespace BTN_LTCSDL
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(635, 82);
+            this.label3.Location = new System.Drawing.Point(635, 109);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 17);
             this.label3.TabIndex = 6;
@@ -165,7 +170,7 @@ namespace BTN_LTCSDL
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btDong);
+            this.groupBox2.Controls.Add(this.btReport);
             this.groupBox2.Controls.Add(this.btXoa);
             this.groupBox2.Controls.Add(this.btSua);
             this.groupBox2.Controls.Add(this.btThem);
@@ -176,16 +181,16 @@ namespace BTN_LTCSDL
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Các chức năng";
             // 
-            // btDong
+            // btReport
             // 
-            this.btDong.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btDong.Location = new System.Drawing.Point(402, 21);
-            this.btDong.Name = "btDong";
-            this.btDong.Size = new System.Drawing.Size(103, 73);
-            this.btDong.TabIndex = 3;
-            this.btDong.Text = "Đóng";
-            this.btDong.UseVisualStyleBackColor = true;
-            this.btDong.Click += new System.EventHandler(this.btDong_Click);
+            this.btReport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btReport.Location = new System.Drawing.Point(402, 21);
+            this.btReport.Name = "btReport";
+            this.btReport.Size = new System.Drawing.Size(103, 73);
+            this.btReport.TabIndex = 3;
+            this.btReport.Text = "Tạo Report";
+            this.btReport.UseVisualStyleBackColor = true;
+            this.btReport.Click += new System.EventHandler(this.btReport_Click);
             // 
             // btXoa
             // 
@@ -231,15 +236,32 @@ namespace BTN_LTCSDL
             this.label7.TabIndex = 3;
             this.label7.Text = "THÔNG TIN KHÁCH HÀNG";
             // 
+            // txtThanhPho
+            // 
+            this.txtThanhPho.Location = new System.Drawing.Point(689, 55);
+            this.txtThanhPho.Name = "txtThanhPho";
+            this.txtThanhPho.Size = new System.Drawing.Size(152, 22);
+            this.txtThanhPho.TabIndex = 16;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(602, 60);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(81, 17);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Thành phố:";
+            // 
             // FKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(888, 665);
+            this.ClientSize = new System.Drawing.Size(877, 665);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dtgvKhachHang);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FKhachHang";
             this.Text = "Thông tin khách hàng";
             this.Load += new System.EventHandler(this.FKhachHang_Load);
@@ -265,12 +287,14 @@ namespace BTN_LTCSDL
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btDong;
         private System.Windows.Forms.Button btXoa;
         private System.Windows.Forms.Button btSua;
         private System.Windows.Forms.Button btThem;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtTenCongTy;
         private System.Windows.Forms.TextBox txtDiaChi;
+        private System.Windows.Forms.Button btReport;
+        private System.Windows.Forms.TextBox txtThanhPho;
+        private System.Windows.Forms.Label label5;
     }
 }

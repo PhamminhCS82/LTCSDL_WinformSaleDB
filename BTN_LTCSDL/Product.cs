@@ -22,11 +22,11 @@ namespace BTN_LTCSDL
     
         public int ProductID { get; set; }
         public string ProductName { get; set; }
-        public Nullable<int> SupplierID { get; set; }
-        public Nullable<int> CategoryID { get; set; }
-        public Nullable<decimal> UnitPrice { get; set; }
-        public Nullable<short> UnitsInStock { get; set; }
-        public Nullable<short> UnitsOnOrder { get; set; }
+        public int SupplierID { get; set; }
+        public int CategoryID { get; set; }
+        public decimal UnitPrice { get; set; }
+        public short UnitsInStock { get; set; }
+        public short UnitsOnOrder { get; set; }
     
         public virtual Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

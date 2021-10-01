@@ -114,12 +114,6 @@
     <Compile Include="FKhachHang.Designer.cs">
       <DependentUpon>FKhachHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="FMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FMenu.Designer.cs">
-      <DependentUpon>FMenu.cs</DependentUpon>
-    </Compile>
     <Compile Include="FNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,10 +164,22 @@
       <DependentUpon>ReportDH.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Report\ReportKH.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportKH.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Report\ReportNV.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ReportNV.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\ReportSP.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportSP.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="SaleLapDBModel.Context.cs">
@@ -197,7 +203,6 @@
     <Compile Include="sp_helpdiagrams_Result.cs">
       <DependentUpon>SaleLapDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Supplier.cs">
       <DependentUpon>SaleLapDBModel.tt</DependentUpon>
     </Compile>
@@ -218,9 +223,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FKhachHang.resx">
       <DependentUpon>FKhachHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FMenu.resx">
-      <DependentUpon>FMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FNhanVien.resx">
       <DependentUpon>FNhanVien.cs</DependentUpon>
@@ -249,9 +251,17 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReportDH.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\ReportKH.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportKH.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\ReportNV.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReportNV.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ReportSP.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportSP.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -280,19 +290,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="SqlServerTypes\readme.htm" />
-    <Content Include="SqlServerTypes\x64\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <None Include="Resources\Profile.png" />
     <None Include="Resources\Unlock.png" />
     <Content Include="SaleLapDBModel.Context.tt">

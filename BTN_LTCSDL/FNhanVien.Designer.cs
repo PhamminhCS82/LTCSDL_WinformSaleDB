@@ -31,7 +31,6 @@ namespace BTN_LTCSDL
         {
             this.dtgvNhanVien = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btDong = new System.Windows.Forms.Button();
             this.btTaoReport = new System.Windows.Forms.Button();
             this.btXoa = new System.Windows.Forms.Button();
             this.btSua = new System.Windows.Forms.Button();
@@ -67,31 +66,18 @@ namespace BTN_LTCSDL
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btDong);
             this.groupBox2.Controls.Add(this.btTaoReport);
             this.groupBox2.Controls.Add(this.btXoa);
             this.groupBox2.Controls.Add(this.btSua);
             this.groupBox2.Controls.Add(this.btThem);
-            this.groupBox2.Location = new System.Drawing.Point(228, 261);
+            this.groupBox2.Location = new System.Drawing.Point(333, 261);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(645, 100);
+            this.groupBox2.Size = new System.Drawing.Size(540, 100);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Các chức năng";
-            // 
-            // btDong
-            // 
-            this.btDong.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btDong.Location = new System.Drawing.Point(525, 21);
-            this.btDong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btDong.Name = "btDong";
-            this.btDong.Size = new System.Drawing.Size(103, 73);
-            this.btDong.TabIndex = 4;
-            this.btDong.Text = "Đóng";
-            this.btDong.UseVisualStyleBackColor = true;
-            this.btDong.Click += new System.EventHandler(this.btDong_Click);
             // 
             // btTaoReport
             // 
@@ -278,7 +264,6 @@ namespace BTN_LTCSDL
 
         private System.Windows.Forms.DataGridView dtgvNhanVien;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btDong;
         private System.Windows.Forms.Button btTaoReport;
         private System.Windows.Forms.Button btXoa;
         private System.Windows.Forms.Button btSua;

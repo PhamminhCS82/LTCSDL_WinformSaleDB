@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BTN_LTCSDL.BUS;
+using BTN_LTCSDL.Report;
 
 namespace BTN_LTCSDL
 {
@@ -24,11 +25,11 @@ namespace BTN_LTCSDL
         private void CapNhat()
         {
             busKhachHang.HienThiDSKhachHang(dtgvKhachHang);
-            dtgvKhachHang.Columns[0].Width = (int)(0.15 * dtgvKhachHang.Width);
-            dtgvKhachHang.Columns[1].Width = (int)(0.2 * dtgvKhachHang.Width);
-            dtgvKhachHang.Columns[2].Width = (int)(0.2 * dtgvKhachHang.Width);
-            dtgvKhachHang.Columns[3].Width = (int)(0.2 * dtgvKhachHang.Width);
-            dtgvKhachHang.Columns[4].Width = (int)(0.2 * dtgvKhachHang.Width);
+            //dtgvKhachHang.Columns[0].Width = (int)(0.15 * dtgvKhachHang.Width);
+            //dtgvKhachHang.Columns[1].Width = (int)(0.2 * dtgvKhachHang.Width);
+            //dtgvKhachHang.Columns[2].Width = (int)(0.2 * dtgvKhachHang.Width);
+            //dtgvKhachHang.Columns[3].Width = (int)(0.2 * dtgvKhachHang.Width);
+            //dtgvKhachHang.Columns[4].Width = (int)(0.2 * dtgvKhachHang.Width);
         }
 
         private void FKhachHang_Load(object sender, EventArgs e)
@@ -41,7 +42,7 @@ namespace BTN_LTCSDL
         private void btThem_Click(object sender, EventArgs e)
         {
             if (txtTenKhachHang.Text == "" || txtDiaChi.Text == "" || 
-                txtSoDienThoai.Text == "" || txtTenCongTy.Text == "")
+                txtSoDienThoai.Text == "" || txtTenCongTy.Text == "" || txtThanhPho.Text == "")
                 MessageBox.Show("Vui lòng điền dầy đủ thông tin", "Thông báo");
             else
             {
@@ -60,11 +61,6 @@ namespace BTN_LTCSDL
             }    
         }
 
-        private void btDong_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         //Sự kiện kiểm tra và chỉ cho nhập số
         private void txtSoDienThoai_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -81,13 +77,14 @@ namespace BTN_LTCSDL
                 txtTenKhachHang.Text = dtgvKhachHang.Rows[e.RowIndex].Cells["ContactName"].Value.ToString();
                 txtSoDienThoai.Text = dtgvKhachHang.Rows[e.RowIndex].Cells["Phone"].Value.ToString();
                 txtTenCongTy.Text = dtgvKhachHang.Rows[e.RowIndex].Cells["Companyname"].Value.ToString();
+                txtThanhPho.Text = dtgvKhachHang.Rows[e.RowIndex].Cells["City"].Value.ToString();
             }
         }
 
         private void btSua_Click(object sender, EventArgs e)
         {
             if (txtTenKhachHang.Text == "" || txtDiaChi.Text == "" ||
-                txtSoDienThoai.Text == "" || txtTenCongTy.Text == "")
+                txtSoDienThoai.Text == "" || txtTenCongTy.Text == "" || txtThanhPho.Text == "")
                 MessageBox.Show("Vui lòng điền dầy đủ thông tin", "Thông báo");
             else
             {
@@ -97,6 +94,7 @@ namespace BTN_LTCSDL
                 khachHang.CompanyName = txtTenCongTy.Text.Trim();
                 khachHang.Phone = txtSoDienThoai.Text.Trim();
                 khachHang.ContactName = txtTenKhachHang.Text.Trim();
+                khachHang.City = txtThanhPho.Text.Trim();
                 if (busKhachHang.SuaKhachHang(khachHang))
                 {
                     CapNhat();
@@ -123,11 +121,21 @@ namespace BTN_LTCSDL
                     txtSoDienThoai.Text = "";
                     txtTenCongTy.Text = "";
                     txtTenKhachHang.Text = "";
+                    txtThanhPho.Text = "";
                     MessageBox.Show("Xóa khách hàng thành công", "Thông báo");
                 }
                 else
                     MessageBox.Show("Đã xảy ra lỗi khi xóa khách hàng", "Thông báo");
             }
+        }
+
+        private void btReport_Click(object sender, EventArgs e)
+        {
+            ReportKH khachHang = new ReportKH();
+            FReport report = new FReport();
+            khachHang.SetDataSource(busKhachHang.HienThiDSKhachHangReport().ToList());
+            report.FReportViewer.ReportSource = khachHang;
+            report.Show();
         }
     }
 }

@@ -31,7 +31,6 @@ namespace BTN_LTCSDL
         {
             this.dtgvDonHang = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btDong = new System.Windows.Forms.Button();
             this.btXoa = new System.Windows.Forms.Button();
             this.btSua = new System.Windows.Forms.Button();
             this.btThem = new System.Windows.Forms.Button();
@@ -55,6 +54,7 @@ namespace BTN_LTCSDL
             // 
             this.dtgvDonHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvDonHang.Location = new System.Drawing.Point(12, 378);
+            this.dtgvDonHang.MultiSelect = false;
             this.dtgvDonHang.Name = "dtgvDonHang";
             this.dtgvDonHang.RowHeadersWidth = 51;
             this.dtgvDonHang.RowTemplate.Height = 24;
@@ -65,7 +65,7 @@ namespace BTN_LTCSDL
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btDong);
+            this.groupBox2.Controls.Add(this.btnReport);
             this.groupBox2.Controls.Add(this.btXoa);
             this.groupBox2.Controls.Add(this.btSua);
             this.groupBox2.Controls.Add(this.btThem);
@@ -75,17 +75,6 @@ namespace BTN_LTCSDL
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Các chức năng";
-            // 
-            // btDong
-            // 
-            this.btDong.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btDong.Location = new System.Drawing.Point(402, 21);
-            this.btDong.Name = "btDong";
-            this.btDong.Size = new System.Drawing.Size(103, 73);
-            this.btDong.TabIndex = 3;
-            this.btDong.Text = "Đóng";
-            this.btDong.UseVisualStyleBackColor = true;
-            this.btDong.Click += new System.EventHandler(this.btDong_Click);
             // 
             // btXoa
             // 
@@ -219,7 +208,7 @@ namespace BTN_LTCSDL
             // btnReport
             // 
             this.btnReport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReport.Location = new System.Drawing.Point(24, 284);
+            this.btnReport.Location = new System.Drawing.Point(405, 21);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(103, 73);
             this.btnReport.TabIndex = 4;
@@ -231,12 +220,12 @@ namespace BTN_LTCSDL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(888, 665);
-            this.Controls.Add(this.btnReport);
+            this.ClientSize = new System.Drawing.Size(877, 665);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dtgvDonHang);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FDonHang";
             this.Text = "Danh mục sản phẩm";
             this.Load += new System.EventHandler(this.FDonHang_Load);
@@ -253,7 +242,6 @@ namespace BTN_LTCSDL
 
         private System.Windows.Forms.DataGridView dtgvDonHang;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btDong;
         private System.Windows.Forms.Button btXoa;
         private System.Windows.Forms.Button btSua;
         private System.Windows.Forms.Button btThem;
